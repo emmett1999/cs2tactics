@@ -1,0 +1,28 @@
+// @use 'sass:map';
+// @use '@angular/material' as mat;
+
+// @mixin mix-app-theme($app-theme) {
+//     $color-config: mat.get-color-config($app-theme);
+//     $prim: map-get($color-config, 'primary');
+//     $acc: map-get($color-config, 'accent');
+  
+//     .mat-button {
+//         background-color: mat-color(accent);
+//         color: mat-color(accent, default-contrast);
+//       }
+
+//   .mat-button-toggle {
+//     background-color: mat-color(prim);
+//     color: mat-color(prim, default-contrast);
+//   }
+  
+//   .mat-button-toggle-checked {
+//     background-color: mat-color(acc);
+//     color: mat-color(acc, default-contrast);
+//   }
+
+//   .mat-button-toggle-label-content{
+//     color:mat-color(prim)
+//     }
+  
+// }

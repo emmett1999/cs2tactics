@@ -1,0 +1,25 @@
+<style>
+.example-card {
+max-width: 400px;
+}
+
+.example-header-image {
+width: 100%;
+}
+</style>
+
+<mat-card class="example-card">
+    <mat-card-header>
+        <!-- TODO: make this an icon of smoke, molly etc.-->
+      <!-- <div mat-card-avatar class="example-header-image"></div> -->
+      <mat-card-title>{{title}}</mat-card-title>
+      <mat-card-subtitle>{{type}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <img class='example-header-image' src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>

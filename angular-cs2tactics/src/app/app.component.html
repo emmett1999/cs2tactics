@@ -1,10 +1,35 @@
 <style>
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+.toolbar-button {
+  height: 50px;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+.logo-image {
+  height: 56px;
+  width: auto;
+  padding-right: 20px;
+}
+
+/* TODO: fix bug where buttons move because of padding */
+.active-button {
+  border: 1px solid white;
+}
 
 </style>
 
+<router-outlet>
 <mat-toolbar color="primary">
-  <span>
-    My App
-  </span>
+  <img class="logo-image" src="assets/placeholder_logo.png">
+  <button mat-button class="toolbar-button" routerLink='/mirage' routerLinkActive="active-button">Mirage</button>
+  <button mat-button class="toolbar-button" routerLink='/overpass' routerLinkActive="active-button">Overpass</button>
+  <button mat-button class="toolbar-button" routerLink='/nuke' routerLinkActive="active-button">Nuke</button>
+  <span class="toolbar-spacer"></span>
+  <button mat-button class="toolbar-button" routerLink='/guides' routerLinkActive="active-button">Guides</button>
+  <span>About</span>
 </mat-toolbar>
-<h1>{{ title }}</h1>
+</router-outlet>

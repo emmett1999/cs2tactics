@@ -1,15 +1,26 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatCardModule} from '@angular/material/card';
+
 
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { NadeTileComponent } from './nade-tile/nade-tile.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { GuideViewComponent } from './guide-view/guide-view.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NadeTileComponent,
+    DashboardComponent,
+    GuideViewComponent
   ],
   imports: [
-    BrowserModule, MatToolbarModule
+    BrowserModule, MatToolbarModule, MatButtonModule, MatButtonToggleModule, AppRoutingModule, MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
