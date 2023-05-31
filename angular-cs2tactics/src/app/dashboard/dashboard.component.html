@@ -1,4 +1,15 @@
-<nade-tile title="Smoke catwalk from spawn" type="Smoke"></nade-tile>
-<nade-tile title="Smoke catwalk from spawn" type="Smoke"></nade-tile>
-<nade-tile title="Smoke catwalk from spawn" type="Smoke"></nade-tile>
-<nade-tile title="Smoke catwalk from spawn" type="Smoke"></nade-tile>
+<style>
+
+.grenade-tile {
+    float: left;
+}
+
+</style>
+
+
+<!-- <button (click)="displayMirage()">Display Mirage</button>
+<button (click)="displayOverpass()">Display Overpass</button>
+<button (click)="displayNuke()">Display Nuke</button> -->
+<span *ngFor="let grenade of grenades">
+    <nade-tile class='grenade-tile' title={{grenade.title}} type={{grenade.type}} map={{grenade.map}} contentUrl={{grenade.contentUrl}}></nade-tile>
+</span>
