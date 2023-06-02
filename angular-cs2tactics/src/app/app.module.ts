@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
-
+import {MatGridListModule} from '@angular/material/grid-list';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -19,7 +19,7 @@ import { GuideViewComponent } from './guide-view/guide-view.component';
     GuideViewComponent
   ],
   imports: [
-    BrowserModule, MatToolbarModule, MatButtonModule, AppRoutingModule, MatCardModule
+    BrowserModule, MatToolbarModule, MatButtonModule, AppRoutingModule, MatCardModule, MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

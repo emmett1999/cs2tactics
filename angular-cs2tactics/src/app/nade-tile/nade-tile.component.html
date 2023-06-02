@@ -1,20 +1,41 @@
 <style>
-.example-card {
-  max-width: 400px;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+mat-card-footer {
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 5px;
 }
 
 .example-header-image {
   width: 100%;
 }
 
+/* mat-card-header {
+
+} */
+
+mat-card-footer {
+  font-family: 'Roboto', sans-serif;
+}
+
+.map-footer {
+  float: right;
+}
+
+mat-card {
+  border: 2px solid #000;
+}
+
 </style>
 
-<mat-card class="example-card">
+<mat-card>
     <mat-card-header>
         <!-- TODO: make this an icon of smoke, molly etc.-->
       <!-- <div mat-card-avatar class="example-header-image"></div> -->
       <mat-card-title>{{title}}</mat-card-title>
-      <mat-card-subtitle>{{type}}</mat-card-subtitle>
+      <mat-card-subtitle>from somewhere</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
       <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" class='example-header-image' loop muted>
@@ -22,8 +43,9 @@
       </video>
         <!-- <img class='example-header-image' src="https://thumbs.gfycat.com/WhiteOptimisticGrackle-mobile.mp4"> -->
     </mat-card-content>
-    <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
-    </mat-card-actions>
+    <mat-card-footer>
+        <span>{{ type | uppercase}}</span>
+        <span class="map-footer">{{ map | uppercase}}</span>
+        
+    </mat-card-footer>
   </mat-card>

@@ -4,8 +4,17 @@
     float: left;
 }
 
+
 </style>
 
-<span *ngFor="let grenade of grenades">
-    <nade-tile class='grenade-tile' title={{grenade.title}} type={{grenade.type}} map={{grenade.map}} contentUrl={{grenade.contentUrl}}></nade-tile>
-</span>
+
+<mat-grid-list cols="4" gutterSize="20" rowHeight="300px">
+    <span *ngFor="let grenade of grenades">
+        <mat-grid-tile class="grid-tile-style">
+            <nade-tile class='grenade-tile' title={{grenade.title}} type={{grenade.type}} map={{grenade.map}} contentUrl={{grenade.contentUrl}}>
+            </nade-tile>
+        </mat-grid-tile>
+    </span>
+</mat-grid-list>
+
+
