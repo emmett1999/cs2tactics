@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 
 
@@ -20,7 +19,7 @@ import { GuideViewComponent } from './guide-view/guide-view.component';
     GuideViewComponent
   ],
   imports: [
-    BrowserModule, MatToolbarModule, MatButtonModule, MatButtonToggleModule, AppRoutingModule, MatCardModule
+    BrowserModule, MatToolbarModule, MatButtonModule, AppRoutingModule, MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

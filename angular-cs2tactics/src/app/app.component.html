@@ -1,12 +1,10 @@
 <style>
-.toolbar-spacer {
-  flex: 1 1 auto;
-}
 
-.toolbar-button {
-  height: 50px;
-  font-size: 20px;
-  letter-spacing: 1px;
+.logo-button {
+  background: transparent;
+  border: none !important;
+  font-size:0;
+  cursor:pointer;
 }
 
 .logo-image {
@@ -15,21 +13,41 @@
   padding-right: 20px;
 }
 
-/* TODO: fix bug where buttons move because of padding */
+.toolbar {
+  letter-spacing: 1px;
+}
+
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+.toolbar-button {
+  height: 50px;
+  font-size: 20px;
+}
+
+
+/* This is just being marked as !important for now because these buttons will later be using color='accent' with custom theme */
 .active-button {
-  border: 1px solid white;
+  background-color: #FFA500 !important;
 }
 
 </style>
 
-
-<mat-toolbar color="primary">
-  <img class="logo-image" src="assets/placeholder_logo.png">
-  <button mat-button class="toolbar-button" routerLink='/mirage' routerLinkActive="active-button">Mirage</button>
-  <button mat-button class="toolbar-button" routerLink='/overpass' routerLinkActive="active-button">Overpass</button>
-  <button mat-button class="toolbar-button" routerLink='/nuke' routerLinkActive="active-button">Nuke</button>
+<mat-toolbar class="toolbar" color="primary">
+  <button class="logo-button" (click)="updateCurrentMap('all')"><img class="logo-image" src="assets/placeholder_logo.png" routerLink='/'></button>
+  <button (click)="updateCurrentMap('mirage')" 
+    mat-raised-button color="primary" class="toolbar-button" 
+    routerLink='/mirage' routerLinkActive="active-button">Mirage</button>
+  <button (click)="updateCurrentMap('overpass')" 
+    mat-raised-button color="primary" class="toolbar-button" 
+    routerLink='/overpass' routerLinkActive="active-button">Overpass</button>
+  <button (click)="updateCurrentMap('nuke')" 
+    mat-raised-button color='primary' class="toolbar-button" 
+    routerLink='/nuke' routerLinkActive="active-button">Nuke</button>
   <span class="toolbar-spacer"></span>
-  <button mat-button class="toolbar-button" routerLink='/guides' routerLinkActive="active-button">Guides</button>
+  <!-- <button mat-button class="toolbar-button" routerLink='/guides' routerLinkActive="active-button">Guides</button> -->
   <span>About</span>
 </mat-toolbar>
+<app-dashboard [selectedMap]="currentMap"></app-dashboard>
 <router-outlet></router-outlet>

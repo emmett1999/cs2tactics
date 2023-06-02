@@ -8,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'CS2 Tactics';
+  currentMap = "all";
+  // when the current map changes, call my childs display method
+
+  updateCurrentMap(mapName: string): void {
+    this.currentMap = mapName;
+    console.log("AppComponent currentMap is", this.currentMap);
+  }
 }

@@ -1,46 +1,64 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { Grenade } from '../grenade';
 import { GrenadeService } from '../grenade.service';
 import { AppRoutingModule } from '../app-routing.module';
 import { ActivatedRoute } from '@angular/router';
-import { Router } from '@angular/router';
+import { Router, NavigationStart, NavigationEnd } from '@angular/router';
+import { SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnChanges {
     grenades: Grenade[] = [];
 
-    constructor(private grenadeService: GrenadeService, private router: Router) {
-      // I will want to subscribe to the router events. when the route changes, call the method to determine the route
+    @Input() selectedMap;
+
+    constructor(private grenadeService: GrenadeService) {
+
     }
 
-    getAllGrenades(): void {
-      this.grenades = this.grenadeService.getAllGrenades();
+    ngOnChanges(changes: SimpleChanges) {
+      // changes.prop contains the old and the new value...
+      this.determineDisplay();
+      console.log("selectedMap is ", this.selectedMap);
+      console.log("changes", changes);
     }
 
     ngOnInit(): void {
-      this.displayMirage();
+      this.displayAllGrenades;
     }
 
-    logRoute(): void {
-      console.log("Current route ", this.router.url);
+    determineDisplay(): void {
+      console.log("selectedMap: " + this.selectedMap);
+      if(this.selectedMap == "mirage") {
+        this.displayMirage();
+      } else if (this.selectedMap == "overpass") {
+        this.displayOverpass();
+      } else if (this.selectedMap == "nuke") {
+        this.displayNuke();
+      } else if (this.selectedMap == "all") {
+        this.displayAllGrenades();
+      }
+
+      console.log("Grenades value: ", this.grenades);
+    }
+
+    displayAllGrenades(): void {
+      this.grenades = this.grenadeService.getAllGrenades();
     }
 
     displayMirage(): void {
       this.grenades = this.grenadeService.getMirage();
-      //console.log("Mirage route", this.route.url);
     }
 
     displayOverpass(): void {
       this.grenades = this.grenadeService.getOverpass();
-      //console.log("Overpass route", this.route.url);
     }
 
     displayNuke(): void {
       this.grenades = this.grenadeService.getNuke();
-      //console.log("Nuke route", this.route.url);
     }
 }
