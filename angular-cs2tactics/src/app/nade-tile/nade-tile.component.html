@@ -26,10 +26,23 @@ mat-card-footer {
 
 mat-card {
   border: 2px solid #000;
+  background-color:lightsteelblue;
+}
+
+mat-card-header {
+  padding-top: 0px;
+}
+
+.card-button {
+  background: transparent;
+  border: none !important;
+  font-size:0;
+  cursor:pointer;
 }
 
 </style>
 
+<button class="card-button" (click)="openDialog()">
 <mat-card>
     <mat-card-header>
         <!-- TODO: make this an icon of smoke, molly etc.-->
@@ -48,4 +61,5 @@ mat-card {
         <span class="map-footer">{{ map | uppercase}}</span>
         
     </mat-card-footer>
-  </mat-card>
+</mat-card>
+</button>

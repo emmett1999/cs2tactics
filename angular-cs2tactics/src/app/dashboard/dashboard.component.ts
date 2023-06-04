@@ -14,7 +14,7 @@ import { SimpleChanges } from '@angular/core';
 export class DashboardComponent implements OnChanges {
     grenades: Grenade[] = [];
 
-    @Input() selectedMap;
+    @Input() selectedMap: string;
 
     constructor(private grenadeService: GrenadeService) {
 
