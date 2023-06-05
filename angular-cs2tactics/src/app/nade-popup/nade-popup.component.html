@@ -1,10 +1,41 @@
-<p>nade-popup works!</p>
-<p>nade-popup works!</p>
-<p>nade-popup works!</p>
-<p>nade-popup works!</p>
-<p>nade-popup works!</p>
-<p>nade-popup works!</p>
-<p>nade-popup works!</p>
-<p>nade-popup works!</p>
-<p>nade-popup works!</p>
+<style>
 
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+video {
+    width: 90%;
+}
+
+.dialog-container {
+    font-family: 'Roboto';
+    background-color:lightblue;
+    height: 100%; /* Not sure this is needed */
+    text-align: center;
+}
+
+.description-container {
+    text-align: center;
+    height: 80px; /* This will probably need to be adjusted in the future */
+}
+
+div > .description-container {
+    text-align: left;
+    padding-left: 6%;
+    padding-right: 6%;
+}
+
+</style>
+
+<div class="dialog-container">
+    <h1 mat-dialog-title>{{ data.title }} <span>From somewhere</span></h1>
+    <video controls muted>
+        <source src={{data.contentUrl}} type="video/mp4"/>
+    </video>
+    <div class="description-container">
+        <div>Description:</div>
+        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+    </div>
+    <div>
+        {{ data.map | uppercase}} {{ data.type | uppercase}}
+    </div>
+</div>

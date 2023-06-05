@@ -8,13 +8,9 @@ mat-card-footer {
   padding-bottom: 5px;
 }
 
-.example-header-image {
+video {
   width: 100%;
 }
-
-/* mat-card-header {
-
-} */
 
 mat-card-footer {
   font-family: 'Roboto', sans-serif;
@@ -26,7 +22,7 @@ mat-card-footer {
 
 mat-card {
   border: 2px solid #000;
-  background-color:lightsteelblue;
+  background-color:lightblue;
 }
 
 mat-card-header {
@@ -38,28 +34,33 @@ mat-card-header {
   border: none !important;
   font-size:0;
   cursor:pointer;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+mat-card-subtitle {
+  text-align: left;
 }
 
 </style>
 
-<button class="card-button" (click)="openDialog()">
 <mat-card>
+  <button class="card-button" (click)="openDialog()">
     <mat-card-header>
         <!-- TODO: make this an icon of smoke, molly etc.-->
       <!-- <div mat-card-avatar class="example-header-image"></div> -->
-      <mat-card-title>{{title}}</mat-card-title>
+      <mat-card-title>{{grenade.title}}</mat-card-title>
       <mat-card-subtitle>from somewhere</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-      <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" class='example-header-image' loop muted>
-        <source src="https://thumbs.gfycat.com/WhiteOptimisticGrackle-mobile.mp4" type="video/mp4" />
+      <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" loop muted>
+        <source src={{grenade.contentUrl}} type="video/mp4" />
       </video>
-        <!-- <img class='example-header-image' src="https://thumbs.gfycat.com/WhiteOptimisticGrackle-mobile.mp4"> -->
     </mat-card-content>
+  </button>
+    <!-- TODO: Figure out why surrounding the mar-card-footer in a button hides the footer -->
     <mat-card-footer>
-        <span>{{ type | uppercase}}</span>
-        <span class="map-footer">{{ map | uppercase}}</span>
-        
+        <span>{{ grenade.type | uppercase}} </span>
+        <span class="map-footer">{{ grenade.map | uppercase}}</span>
     </mat-card-footer>
 </mat-card>
-</button>

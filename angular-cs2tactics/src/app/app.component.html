@@ -34,6 +34,16 @@
 
 </style>
 
+<!-- 
+  TODO: Fix the routing so that linking to the route will display the correct filter
+  TODO: Add 'About page', add guides feature for each map
+  TODO: Make the styling more consistent and actually use the angular material themes
+
+  Before release:
+  * Add description, throw type, startingLocation
+  * Fill out the list of grenades with all of my actual grenades. I will need to get the real mp4s of all my gifs.
+-->
+
 <mat-toolbar class="toolbar" color="primary">
   <button class="logo-button" (click)="updateCurrentMap('all')"><img class="logo-image" src="assets/placeholder_logo.png" routerLink='/'></button>
   <button (click)="updateCurrentMap('mirage')" 
@@ -47,7 +57,7 @@
     routerLink='/nuke' routerLinkActive="active-button">Nuke</button>
   <span class="toolbar-spacer"></span>
   <!-- <button mat-button class="toolbar-button" routerLink='/guides' routerLinkActive="active-button">Guides</button> -->
-  <span>About</span>
+  <!-- <span>About</span> -->
 </mat-toolbar>
 <app-dashboard [selectedMap]="currentMap"></app-dashboard>
 <router-outlet></router-outlet>
