@@ -20,7 +20,10 @@ export class NadeTileComponent {
         width: '854px',
         data: {
           title: this.grenade.title,
-          type: this.grenade.type,
+          startingLocation: this.grenade.startingLocation,
+          nadeType: this.grenade.nadeType,
+          throwType: this.grenade.throwType,
+          description: this.grenade.description,
           map: this.grenade.map,
           contentUrl: this.grenade.contentUrl,
         },
@@ -28,3 +31,13 @@ export class NadeTileComponent {
       });
     }
 }
+
+  // export interface Grenade {
+  //   title: string;
+  //   startingLocation: string;
+  //   nadeType: string;
+  //   throwType: string;
+  //   description: string;
+  //   map: string;
+  //   contentUrl: string;
+  // }

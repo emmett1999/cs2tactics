@@ -27,6 +27,7 @@ mat-card {
 
 mat-card-header {
   padding-top: 0px;
+  text-align: left;
 }
 
 .card-button {
@@ -50,7 +51,7 @@ mat-card-subtitle {
         <!-- TODO: make this an icon of smoke, molly etc.-->
       <!-- <div mat-card-avatar class="example-header-image"></div> -->
       <mat-card-title>{{grenade.title}}</mat-card-title>
-      <mat-card-subtitle>from somewhere</mat-card-subtitle>
+      <mat-card-subtitle>from {{grenade.startingLocation}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
       <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" loop muted>
@@ -60,7 +61,7 @@ mat-card-subtitle {
   </button>
     <!-- TODO: Figure out why surrounding the mar-card-footer in a button hides the footer -->
     <mat-card-footer>
-        <span>{{ grenade.type | uppercase}} </span>
+        <span>{{ grenade.nadeType | uppercase}} </span>
         <span class="map-footer">{{ grenade.map | uppercase}}</span>
     </mat-card-footer>
 </mat-card>

@@ -27,15 +27,15 @@ div > .description-container {
 </style>
 
 <div class="dialog-container">
-    <h1 mat-dialog-title>{{ data.title }} <span>From somewhere</span></h1>
+    <h1 mat-dialog-title>{{ data.title }} <span>from {{data.startingLocation}}</span></h1>
     <video controls muted>
         <source src={{data.contentUrl}} type="video/mp4"/>
     </video>
     <div class="description-container">
         <div>Description:</div>
-        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+        <div>{{data.description}}</div>
     </div>
     <div>
-        {{ data.map | uppercase}} {{ data.type | uppercase}}
+        {{ data.map | uppercase}} {{ data.nadeType | uppercase}}
     </div>
 </div>
