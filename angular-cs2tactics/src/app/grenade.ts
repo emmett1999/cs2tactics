@@ -4,6 +4,7 @@ export interface Grenade {
     startingLocation: string;
     nadeType: string;
     throwType: string;
+    side: string;
     description: string;
     map: string;
     contentUrl: string;

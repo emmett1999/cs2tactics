@@ -15,6 +15,8 @@ export class DashboardComponent implements OnChanges {
     grenades: Grenade[] = [];
 
     @Input() selectedMap: string;
+    @Input() selectedFilters: string[];
+    @Input() selectedSide: string;
 
     constructor(private grenadeService: GrenadeService) {
 
@@ -22,43 +24,52 @@ export class DashboardComponent implements OnChanges {
 
     ngOnChanges(changes: SimpleChanges) {
       // changes.prop contains the old and the new value...
-      this.determineDisplay();
-      console.log("selectedMap is ", this.selectedMap);
-      console.log("changes", changes);
+      this.updateGrenadesForMap();
+      this.updateGrenadesForFilter();
+      this.updateGrenadesForSide();
+      console.log("Dashboard: selectedMap is ", this.selectedMap);
+      console.log("Dashboard: selectedSide is ", this.selectedSide);
+      console.log("Dashboard: selected filters is ", this.selectedFilters);
+      // console.log("changes", changes);
     }
 
     ngOnInit(): void {
-      this.displayAllGrenades;
+      this.updateGrenadesForMap();
     }
 
-    determineDisplay(): void {
-      console.log("selectedMap: " + this.selectedMap);
+    updateGrenadesForSide() : void {
+      this.grenades = this.grenadeService.filterForSide(this.grenades, this.selectedSide);
+    }
+
+    updateGrenadesForFilter() : void{
+      this.grenades = this.grenadeService.filterForNadeType(this.selectedMap, this.selectedFilters);
+    }
+
+    updateGrenadesForMap(): void {
       if(this.selectedMap == "mirage") {
-        this.displayMirage();
+        this.setGrenadesMirage();
       } else if (this.selectedMap == "overpass") {
-        this.displayOverpass();
+        this.setGrenadesOverpass();
       } else if (this.selectedMap == "nuke") {
-        this.displayNuke();
+        this.setDisplayNuke();
       } else if (this.selectedMap == "all") {
-        this.displayAllGrenades();
+        this.setGrenadesAll();
       }
-
-      console.log("Grenades value: ", this.grenades);
     }
 
-    displayAllGrenades(): void {
+    setGrenadesAll(): void {
       this.grenades = this.grenadeService.getAllGrenades();
     }
 
-    displayMirage(): void {
+    setGrenadesMirage(): void {
       this.grenades = this.grenadeService.getMirage();
     }
 
-    displayOverpass(): void {
+    setGrenadesOverpass(): void {
       this.grenades = this.grenadeService.getOverpass();
     }
 
-    displayNuke(): void {
+    setDisplayNuke(): void {
       this.grenades = this.grenadeService.getNuke();
     }
 }

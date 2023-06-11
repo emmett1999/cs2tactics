@@ -5,6 +5,9 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatDividerModule} from '@angular/material/divider';
+
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -22,7 +25,7 @@ import { NadePopupComponent } from './nade-popup/nade-popup.component';
     NadePopupComponent
   ],
   imports: [
-    BrowserModule, MatToolbarModule, MatButtonModule, AppRoutingModule, MatCardModule, MatGridListModule, MatDialogModule
+    BrowserModule, MatToolbarModule, MatButtonModule, AppRoutingModule, MatCardModule, MatGridListModule, MatDialogModule, MatChipsModule, MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent],

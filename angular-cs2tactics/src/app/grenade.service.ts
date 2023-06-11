@@ -13,6 +13,47 @@ export class GrenadeService {
     return GRENADES;
   }
 
+  filterForNadeType(mapName: string, nadeTypes: string[]): Grenade[] {
+    var filteredGrenades: Grenade[] = [];
+    if(mapName == "mirage") {
+      filteredGrenades = this.getMirage();
+    } else if(mapName == "overpass") {
+      filteredGrenades = this.getOverpass();
+    } else if(mapName == "nuke") {
+      filteredGrenades = this.getNuke();
+    } else if(mapName == "all") {
+      filteredGrenades = GRENADES;
+    }
+
+    const nades = filteredGrenades.filter(item => {
+      return this.stringContainsOneListItem(item.nadeType, nadeTypes)
+    })
+
+    console.log("Selected nades are: ", nades);
+    return nades;
+
+  }
+
+  filterForSide(grenades: Grenade[], side: string) : Grenade[] {
+    if(side == "all") {
+      return grenades;
+    }
+    const eligileGrenades = grenades.filter(item => {
+      return item.side == "all" || item.side == side;
+    })
+
+    return eligileGrenades;
+  }
+
+  stringContainsOneListItem(target: string, filters: string[]) : boolean{
+    for (var i = 0; i < filters.length; i++) {
+      if(target.includes(filters[i])) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   getMirage(): Grenade[] {
     const nades = GRENADES.filter(item => {
       return item.map === "mirage";

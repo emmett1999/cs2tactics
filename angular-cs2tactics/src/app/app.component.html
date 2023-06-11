@@ -32,6 +32,15 @@
   background-color: #FFA500 !important;
 }
 
+.nade-type-label {
+  padding-right: 15px;
+}
+
+.nade-side-label {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 </style>
 
 <!-- 
@@ -59,5 +68,20 @@
   <!-- <button mat-button class="toolbar-button" routerLink='/guides' routerLinkActive="active-button">Guides</button> -->
   <!-- <span>About</span> -->
 </mat-toolbar>
-<app-dashboard [selectedMap]="currentMap"></app-dashboard>
+<mat-toolbar>
+  <span class="nade-type-label">Nade type:</span>
+  <mat-chip-listbox multiple>
+  <span *ngFor="let filter of availableGrenadeFilters">
+    <mat-chip-option color="primary" selected (selectionChange)="updateFilter(filter)">{{ filter }}</mat-chip-option>
+  </span>
+</mat-chip-listbox>
+<span class="nade-side-label">Side:</span>
+<mat-chip-listbox >
+  <mat-chip-option (click)="updateCurrentSide('all')" color="primary" selected>All</mat-chip-option>
+  <mat-chip-option (click)="updateCurrentSide('CT')" color="primary">CT side</mat-chip-option>
+  <mat-chip-option (click)="updateCurrentSide('T')" color="primary">T side</mat-chip-option>
+</mat-chip-listbox>
+</mat-toolbar>
+
+<app-dashboard [selectedMap]="currentMap" [selectedSide]="currentSide" [selectedFilters]="currentGrenadesFilters"></app-dashboard>
 <router-outlet></router-outlet>
