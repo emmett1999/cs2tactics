@@ -19,11 +19,13 @@ export class AppComponent {
   currentMap = "all";
   currentSide = "all";
   currentGrenadesFilters = [];
-  availableGrenadeFilters = [];
+  // availableGrenadeFilters = [];
+
+  searchBarValue = "Search some stuff";
 
   ngOnInit(): void {
     this.currentGrenadesFilters.push(...MAP_FILTERS);
-    this.availableGrenadeFilters.push(...MAP_FILTERS);
+    // this.availableGrenadeFilters.push(...MAP_FILTERS);
   }
  
   updateCurrentSide(sideName: string): void {

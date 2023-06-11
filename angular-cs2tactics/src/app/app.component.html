@@ -51,6 +51,7 @@
     color: #ffffff;
 }
 
+
 </style>
 
 <!-- 
@@ -79,16 +80,20 @@
 <mat-toolbar>
   <span class="nade-type-label">Nade type:</span>
   <mat-chip-listbox multiple>
-  <span *ngFor="let filter of availableGrenadeFilters">
-    <mat-chip-option color="primary" selected (selectionChange)="updateFilter(filter)">{{ filter }}</mat-chip-option>
-  </span>
-</mat-chip-listbox>
-<span class="nade-side-label">Side:</span>
-<mat-chip-listbox >
-  <mat-chip-option (click)="updateCurrentSide('all')" color="primary" selected>All</mat-chip-option>
-  <mat-chip-option (click)="updateCurrentSide('CT')" color="primary">CT side</mat-chip-option>
-  <mat-chip-option (click)="updateCurrentSide('T')" color="primary">T side</mat-chip-option>
-</mat-chip-listbox>
+    <mat-chip-option color="primary" selected (selectionChange)="updateFilter('smoke')">Smoke</mat-chip-option>
+    <mat-chip-option color="primary" selected (selectionChange)="updateFilter('flash')">Flash</mat-chip-option>
+    <mat-chip-option color="primary" selected (selectionChange)="updateFilter('molly')">Molly</mat-chip-option>
+    <mat-chip-option color="primary" selected (selectionChange)="updateFilter('he')">HE grenade</mat-chip-option>
+    <mat-chip-option color="primary" selected (selectionChange)="updateFilter('boost')">Boost</mat-chip-option>
+  </mat-chip-listbox>
+  <span class="nade-side-label">Side:</span>
+  <mat-chip-listbox>
+    <mat-chip-option (click)="updateCurrentSide('all')" color="primary" selected>All</mat-chip-option>
+    <mat-chip-option (click)="updateCurrentSide('CT')" color="primary">CT side</mat-chip-option>
+    <mat-chip-option (click)="updateCurrentSide('T')" color="primary">T side</mat-chip-option>
+  </mat-chip-listbox>
+  <!-- <span class="toolbar-spacer"></span> -->
+  
 </mat-toolbar>
 
 <app-dashboard [selectedMap]="currentMap" [selectedSide]="currentSide" [selectedFilters]="currentGrenadesFilters"></app-dashboard>

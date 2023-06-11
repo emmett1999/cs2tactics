@@ -18,6 +18,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { GuideViewComponent } from './guide-view/guide-view.component';
 import { NadePopupComponent } from './nade-popup/nade-popup.component';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatInputModule} from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -31,7 +35,7 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
   imports: [
     BrowserModule, MatToolbarModule, MatButtonModule, AppRoutingModule,
      MatCardModule, MatGridListModule, MatDialogModule, MatChipsModule,
-      MatPaginatorModule, BrowserAnimationsModule, MatButtonToggleModule
+      MatPaginatorModule, BrowserAnimationsModule, MatButtonToggleModule, MatInputModule, MatIconModule, FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
