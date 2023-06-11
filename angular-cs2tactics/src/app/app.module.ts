@@ -7,7 +7,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatPaginatorModule} from '@angular/material/paginator';
-import { BrowserAnimationsModule } from '@angular/platformbrowser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -17,6 +17,8 @@ import { NadeTileComponent } from './nade-tile/nade-tile.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { GuideViewComponent } from './guide-view/guide-view.component';
 import { NadePopupComponent } from './nade-popup/nade-popup.component';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { NadePopupComponent } from './nade-popup/nade-popup.component';
     NadePopupComponent
   ],
   imports: [
-    BrowserModule, MatToolbarModule, MatButtonModule, AppRoutingModule, MatCardModule, MatGridListModule, MatDialogModule, MatChipsModule, MatPaginatorModule
+    BrowserModule, MatToolbarModule, MatButtonModule, AppRoutingModule,
+     MatCardModule, MatGridListModule, MatDialogModule, MatChipsModule,
+      MatPaginatorModule, BrowserAnimationsModule, MatButtonToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -29,9 +29,7 @@ export class GrenadeService {
       return this.stringContainsOneListItem(item.nadeType, nadeTypes)
     })
 
-    console.log("Selected nades are: ", nades);
     return nades;
-
   }
 
   filterForSide(grenades: Grenade[], side: string) : Grenade[] {
@@ -59,7 +57,7 @@ export class GrenadeService {
       return item.map === "mirage";
     })
 
-    console.log("Mirage grenades", nades);
+    // console.log("Mirage grenades", nades);
 
     return nades;
   }
@@ -69,7 +67,7 @@ export class GrenadeService {
       return item.map === "overpass";
     })
 
-    console.log("Overpass grenades", nades);
+    // console.log("Overpass grenades", nades);
 
     return nades;
   }
@@ -79,7 +77,7 @@ export class GrenadeService {
       return item.map === "nuke";
     })
 
-    console.log("Nuke grenades", nades);
+    // console.log("Nuke grenades", nades);
 
     return nades;
   }

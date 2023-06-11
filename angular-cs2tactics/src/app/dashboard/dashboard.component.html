@@ -6,19 +6,19 @@
 
 </style>
 
-<mat-paginator [length]="grenadeListLength"
-[pageSize]="pageSize"
-[pageSizeOptions]="pageSizeOptions"
-(page)="OnPageChange($event)">
-</mat-paginator>
-
 <mat-grid-list cols="4" gutterSize="20" rowHeight="400px">
-    <span *ngFor="let nade of grenades">
+    <span *ngFor="let nade of pagedGrenades">
         <mat-grid-tile class="grid-tile-style">
             <nade-tile class='grenade-tile' [grenade]="nade">
             </nade-tile>
         </mat-grid-tile>
     </span>
 </mat-grid-list>
+<!-- [pageSizeOptions]="pageSizeOptions" -->
+<mat-paginator #paginator
+        [length]="grenadeListLength"
+        [pageSize]="pageSize"
+        (page)="OnPageChange($event)">
+    </mat-paginator>
 
 

@@ -1,11 +1,11 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, ViewChild } from '@angular/core';
 import { Grenade } from '../grenade';
 import { GrenadeService } from '../grenade.service';
 import { AppRoutingModule } from '../app-routing.module';
 import { ActivatedRoute } from '@angular/router';
 import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 import { SimpleChanges } from '@angular/core';
-import { PageEvent } from '@angular/material/paginator';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
 
 
 @Component({
@@ -24,36 +24,77 @@ export class DashboardComponent implements OnChanges {
     // paginator variables
     grenadeListLength: number = 0;
     pageSize: number = 20;
-    pageSizeOptions: number[] = [10, 20, 40];
+    // pageSizeOptions: number[] = [10, 20, 40];
+
+    index: number = 0;
+
+    @ViewChild('paginator', { static: true }) paginator: MatPaginator;
 
     constructor(private grenadeService: GrenadeService) {}
 
     ngOnInit(): void {
-      this.grenadeListLength = this.grenades.length;
-      this.updateGrenadesForMap();
+      console.log("ngOnInit() called");
+      this.index = 0;
+      this.onChanges();
+      // this.paginator.firstPage();
     }
+
+    // ngAfterViewInit(): void {
+    //   console.log("ngAfterViewInit() called");
+    //   console.log("Paginator object: ", this.paginator);
+    //   this.paginator.firstPage();
+    //   // this.paginator.pageIndex = 2;
+    // }
 
     OnPageChange(event: PageEvent){
       let startIndex = event.pageIndex * event.pageSize;
       let endIndex = startIndex + event.pageSize;
       if(endIndex > this.grenadeListLength){
         endIndex = this.grenadeListLength;
+        startIndex = endIndex - event.pageSize;
       }
       this.pagedGrenades = this.grenades.slice(startIndex, endIndex);
       console.log("Start index: ", startIndex);
       console.log("End index: ", endIndex);
-      console.log("Paged grenades: ", this.pagedGrenades);
+      // console.log("Paged grenades: ", this.pagedGrenades);
     }
 
     ngOnChanges(changes: SimpleChanges) {
-      // changes.prop contains the old and the new value...
+      console.log("ngOnChanges() called");
+      this.onChanges();
+      // console.log("Paginator object: ", this.paginator);
+      // console.log("Calling paginator.firstPage()");
+      
+
+  }
+
+    onChanges(): void {
       this.updateGrenadesForMap();
       this.updateGrenadesForFilter();
       this.updateGrenadesForSide();
+      // setup paginator
+      this.resetPaginator();
       console.log("Dashboard: selectedMap is ", this.selectedMap);
       console.log("Dashboard: selectedSide is ", this.selectedSide);
       console.log("Dashboard: selected filters is ", this.selectedFilters);
+      // console.log("Paged grenades: ", this.pagedGrenades);
       // console.log("changes", changes);
+    }
+
+    resetPaginator() : void {
+      this.index = 0;
+      this.paginator.firstPage();
+      this.grenadeListLength = this.grenades.length;
+      this.resetPagedGrenades();
+    }
+
+    resetPagedGrenades() : void {
+      let endIndex = this.index+this.pageSize;
+      if(endIndex > this.grenadeListLength) {
+        endIndex = this.grenadeListLength;
+      }
+
+      this.pagedGrenades = this.grenades.slice(this.index, endIndex);
     }
 
     updateGrenadesForSide() : void {

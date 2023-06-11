@@ -41,6 +41,16 @@
   padding-right: 15px;
 }
 
+.mat-button-toggle{
+    background-color: #3f51b5;
+    color: #ffffff;
+}
+
+.mat-button-toggle-checked {
+    background-color: #FFA500;
+    color: #ffffff;
+}
+
 </style>
 
 <!-- 
@@ -55,15 +65,13 @@
 
 <mat-toolbar class="toolbar" color="primary">
   <button class="logo-button" (click)="updateCurrentMap('all')"><img class="logo-image" src="assets/placeholder_logo.png" routerLink='/'></button>
-  <button (click)="updateCurrentMap('mirage')" 
-    mat-raised-button color="primary" class="toolbar-button" 
-    routerLink='/mirage' routerLinkActive="active-button">Mirage</button>
-  <button (click)="updateCurrentMap('overpass')" 
-    mat-raised-button color="primary" class="toolbar-button" 
-    routerLink='/overpass' routerLinkActive="active-button">Overpass</button>
-  <button (click)="updateCurrentMap('nuke')" 
-    mat-raised-button color='primary' class="toolbar-button" 
-    routerLink='/nuke' routerLinkActive="active-button">Nuke</button>
+    <!-- TODO: make mat-button-toggle work with color='primary'. actually figure out the proper themeing -->
+    <mat-button-toggle-group>
+      <mat-button-toggle (click)="updateCurrentMap('mirage')">Mirage</mat-button-toggle>
+      <mat-button-toggle (click)="updateCurrentMap('overpass')">Nuke</mat-button-toggle>
+      <mat-button-toggle (click)="updateCurrentMap('nuke')">Overpass</mat-button-toggle>
+    </mat-button-toggle-group>
+    
   <span class="toolbar-spacer"></span>
   <!-- <button mat-button class="toolbar-button" routerLink='/guides' routerLinkActive="active-button">Guides</button> -->
   <!-- <span>About</span> -->
