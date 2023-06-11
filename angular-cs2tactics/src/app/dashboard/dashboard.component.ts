@@ -5,6 +5,8 @@ import { AppRoutingModule } from '../app-routing.module';
 import { ActivatedRoute } from '@angular/router';
 import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 import { SimpleChanges } from '@angular/core';
+import { PageEvent } from '@angular/material/paginator';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -13,13 +15,34 @@ import { SimpleChanges } from '@angular/core';
 })
 export class DashboardComponent implements OnChanges {
     grenades: Grenade[] = [];
+    pagedGrenades: Grenade[] = [];
 
     @Input() selectedMap: string;
     @Input() selectedFilters: string[];
     @Input() selectedSide: string;
+    
+    // paginator variables
+    grenadeListLength: number = 0;
+    pageSize: number = 20;
+    pageSizeOptions: number[] = [10, 20, 40];
 
-    constructor(private grenadeService: GrenadeService) {
+    constructor(private grenadeService: GrenadeService) {}
 
+    ngOnInit(): void {
+      this.grenadeListLength = this.grenades.length;
+      this.updateGrenadesForMap();
+    }
+
+    OnPageChange(event: PageEvent){
+      let startIndex = event.pageIndex * event.pageSize;
+      let endIndex = startIndex + event.pageSize;
+      if(endIndex > this.grenadeListLength){
+        endIndex = this.grenadeListLength;
+      }
+      this.pagedGrenades = this.grenades.slice(startIndex, endIndex);
+      console.log("Start index: ", startIndex);
+      console.log("End index: ", endIndex);
+      console.log("Paged grenades: ", this.pagedGrenades);
     }
 
     ngOnChanges(changes: SimpleChanges) {
@@ -31,10 +54,6 @@ export class DashboardComponent implements OnChanges {
       console.log("Dashboard: selectedSide is ", this.selectedSide);
       console.log("Dashboard: selected filters is ", this.selectedFilters);
       // console.log("changes", changes);
-    }
-
-    ngOnInit(): void {
-      this.updateGrenadesForMap();
     }
 
     updateGrenadesForSide() : void {
