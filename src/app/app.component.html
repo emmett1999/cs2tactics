@@ -65,7 +65,8 @@
 -->
 
 <mat-toolbar class="toolbar" color="primary">
-  <button class="logo-button" (click)="updateCurrentMap('all')"><img class="logo-image" src="assets/placeholder_logo.png" routerLink='/'></button>
+  <button class="logo-button" (click)="updateCurrentMap('all')"><img class="logo-image" src="assets/placeholder_logo.png"></button>
+  <!-- <button class="logo-button" (click)="updateCurrentMap('all')"><img class="logo-image" src="assets/placeholder_logo.png" routerLink='/'></button> -->
     <!-- TODO: make mat-button-toggle work with color='primary'. actually figure out the proper themeing -->
     <mat-button-toggle-group>
       <mat-button-toggle (click)="updateCurrentMap('mirage')">Mirage</mat-button-toggle>
