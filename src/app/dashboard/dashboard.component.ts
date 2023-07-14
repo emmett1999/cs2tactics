@@ -3,7 +3,7 @@ import { Grenade } from '../grenade';
 import { GrenadeService } from '../grenade.service';
 import { AppRoutingModule } from '../app-routing.module';
 import { ActivatedRoute } from '@angular/router';
-import { Router, NavigationStart, NavigationEnd } from '@angular/router';
+import { Router, Event, NavigationStart, NavigationEnd } from '@angular/router';
 import { SimpleChanges } from '@angular/core';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 
@@ -28,9 +28,20 @@ export class DashboardComponent implements OnChanges {
 
     index: number = 0;
 
+    currentRoute: string;
+
     @ViewChild('paginator', { static: true }) paginator: MatPaginator;
 
-    constructor(private grenadeService: GrenadeService) {}
+    constructor(private grenadeService: GrenadeService, private router: Router) {
+      this.currentRoute = "";
+      this.router.events.subscribe((event: Event) => {
+      if (event instanceof NavigationStart) {
+          // Show progress spinner or progress bar
+          console.log('Route change detected');
+          console.log('URL: ', event.url)
+        }
+      });
+    }
 
     ngOnInit(): void {
       console.log("ngOnInit() called");
