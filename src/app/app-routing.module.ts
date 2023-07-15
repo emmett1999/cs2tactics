@@ -12,7 +12,7 @@ const routes: Routes = [
 { path: 'overpass', component: DummyComponent},
 { path: 'nuke', component: DummyComponent},
 { path: '', component: DummyComponent},
-  { path: 'guides', component: GuideViewComponent }
+{ path: 'guides', component: GuideViewComponent }
 
 ];
 
