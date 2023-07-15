@@ -65,10 +65,14 @@
 -->
 
 <mat-toolbar class="toolbar" color="primary">
-  <button class="logo-button" (click)="updateCurrentMap('all')" routerLink='/all'><img class="logo-image" src="assets/placeholder_logo.png"></button>
-    <button mat-button class="toolbar-button" (click)="updateCurrentMap('mirage')" routerLink='/mirage' routerLinkActive="active-button">Mirage</button>
-    <button mat-button class="toolbar-button" (click)="updateCurrentMap('nuke')" routerLink='/nuke' routerLinkActive="active-button">Nuke</button>
-    <button mat-button class="toolbar-button" (click)="updateCurrentMap('overpass')" routerLink='/overpass' routerLinkActive="active-button">Overpass</button>
+  <button class="logo-button" (click)="updateCurrentMap('all')"><img class="logo-image" src="assets/placeholder_logo.png"></button>
+  <!-- <button class="logo-button" (click)="updateCurrentMap('all')"><img class="logo-image" src="assets/placeholder_logo.png" routerLink='/'></button> -->
+    <!-- TODO: make mat-button-toggle work with color='primary'. actually figure out the proper themeing -->
+    <mat-button-toggle-group>
+      <mat-button-toggle (click)="updateCurrentMap('mirage')">Mirage</mat-button-toggle>
+      <mat-button-toggle (click)="updateCurrentMap('nuke')">Nuke</mat-button-toggle>
+      <mat-button-toggle (click)="updateCurrentMap('overpass')">Overpass</mat-button-toggle>
+    </mat-button-toggle-group>
     
   <span class="toolbar-spacer"></span>
   <!-- <button mat-button class="toolbar-button" routerLink='/guides' routerLinkActive="active-button">Guides</button> -->
@@ -93,7 +97,5 @@
   
 </mat-toolbar>
 
-<!-- TODO: remove currentMap variable -->
-<app-dashboard [selectedSide]="currentSide" [selectedFilters]="currentGrenadesFilters"></app-dashboard>
-<router-outlet ></router-outlet>
-<!-- [selectedMap]="currentMap" -->
+<app-dashboard [selectedMap]="currentMap" [selectedSide]="currentSide" [selectedFilters]="currentGrenadesFilters"></app-dashboard>
+<router-outlet></router-outlet>

@@ -3,7 +3,7 @@ import { Grenade } from '../grenade';
 import { GrenadeService } from '../grenade.service';
 import { AppRoutingModule } from '../app-routing.module';
 import { ActivatedRoute } from '@angular/router';
-import { Router, Event, NavigationStart, NavigationEnd } from '@angular/router';
+import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 import { SimpleChanges } from '@angular/core';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 
@@ -28,46 +28,15 @@ export class DashboardComponent implements OnChanges {
 
     index: number = 0;
 
-    currentRoute: string;
-
     @ViewChild('paginator', { static: true }) paginator: MatPaginator;
 
-    constructor(private grenadeService: GrenadeService, private router: Router) {
-      this.currentRoute = "";
-      console.log("Route is initially: ", router.url);
-      this.router.events.subscribe((event: Event) => {
-      if (event instanceof NavigationStart) {
-          // Show progress spinner or progress bar
-          this.updateMapFromRoute(event.url);
-        }
-      });
-    }
+    constructor(private grenadeService: GrenadeService) {}
 
     ngOnInit(): void {
       console.log("ngOnInit() called");
       this.index = 0;
       this.onChanges();
       // this.paginator.firstPage();
-    }
-
-    getMapFromUrl(url: string): string{
-
-      var results = url.split("/");
-      // console.log("results: ", results);
-      var newMap = results[1];
-      return newMap;
-    }
-
-    updateMapFromRoute(newUrl: string): void {
-      console.log('New URL: ', newUrl);
-      var newMap = this.getMapFromUrl(newUrl);
-      if(["all","mirage","overpass","nuke"].includes(newMap)){
-        this.selectedMap = newMap;
-      } else {
-        this.selectedMap = "all";
-      }
-      // console.log("selectedMap is now: ", this.selectedMap);
-      this.onChanges();
     }
 
     // ngAfterViewInit(): void {
