@@ -65,10 +65,10 @@
 -->
 
 <mat-toolbar class="toolbar" color="primary">
-  <button class="logo-button" routerLink='/all' routerLinkActive="active-button"><img class="logo-image" src="assets/placeholder_logo.png"></button>
-    <button mat-button class="toolbar-button" routerLink='/mirage' routerLinkActive="active-button">Mirage</button>
-    <button mat-button class="toolbar-button" routerLink='/nuke' routerLinkActive="active-button">Nuke</button>
-    <button mat-button class="toolbar-button" routerLink='/overpass' routerLinkActive="active-button">Overpass</button>
+  <button class="logo-button" (click)="updateCurrentMap('all')" routerLink='/all'><img class="logo-image" src="assets/placeholder_logo.png"></button>
+    <button mat-button class="toolbar-button" (click)="updateCurrentMap('mirage')" routerLink='/mirage' routerLinkActive="active-button">Mirage</button>
+    <button mat-button class="toolbar-button" (click)="updateCurrentMap('nuke')" routerLink='/nuke' routerLinkActive="active-button">Nuke</button>
+    <button mat-button class="toolbar-button" (click)="updateCurrentMap('overpass')" routerLink='/overpass' routerLinkActive="active-button">Overpass</button>
     
   <span class="toolbar-spacer"></span>
   <!-- <button mat-button class="toolbar-button" routerLink='/guides' routerLinkActive="active-button">Guides</button> -->
@@ -93,5 +93,7 @@
   
 </mat-toolbar>
 
-<app-dashboard [selectedMap]="currentMap" [selectedSide]="currentSide" [selectedFilters]="currentGrenadesFilters"></app-dashboard>
+<!-- TODO: remove currentMap variable -->
+<app-dashboard [selectedSide]="currentSide" [selectedFilters]="currentGrenadesFilters"></app-dashboard>
 <router-outlet ></router-outlet>
+<!-- [selectedMap]="currentMap" -->
