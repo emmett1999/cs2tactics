@@ -21,7 +21,6 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
-import { DummyComponent } from './dummy/dummy.component';
 
 
 
@@ -31,8 +30,7 @@ import { DummyComponent } from './dummy/dummy.component';
     NadeTileComponent,
     DashboardComponent,
     GuideViewComponent,
-    NadePopupComponent,
-    DummyComponent
+    NadePopupComponent
   ],
   imports: [
     BrowserModule, MatToolbarModule, MatButtonModule, AppRoutingModule,
