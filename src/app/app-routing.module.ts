@@ -7,12 +7,11 @@ import { GuideViewComponent } from './guide-view/guide-view.component';
 
 const routes: Routes = [
   // TODO: get the routing to work. currently, the router is displaying an extra Dashboard component with no grenades and an empty paginator
-  // { path: 'mirage'},
-  // { path: 'overpass'},
-  // { path: 'nuke'},
-  // { path: 'all'},
-  { path: 'guides', component: GuideViewComponent }
-
+{ path: 'mirage', component: DummyComponent},
+{ path: 'overpass', component: DummyComponent},
+{ path: 'nuke', component: DummyComponent},
+{ path: '', component: DummyComponent},
+{ path: 'guides', component: GuideViewComponent }
 ];
 
 
