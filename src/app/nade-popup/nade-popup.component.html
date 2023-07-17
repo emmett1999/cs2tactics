@@ -28,7 +28,7 @@ div > .description-container {
 
 <div class="dialog-container">
     <h1 mat-dialog-title>{{ data.title }} <span>from {{data.startingLocation}}</span></h1>
-    <video controls muted>
+    <video controls [muted]="'muted'">
         <source src={{data.contentUrl}} type="video/mp4"/>
     </video>
     <div class="description-container">

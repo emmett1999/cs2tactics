@@ -54,7 +54,7 @@ mat-card-subtitle {
       <mat-card-subtitle>from {{grenade.startingLocation}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-      <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" loop muted>
+      <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" loop [muted]="'muted'">
         <source src={{grenade.contentUrl}} type="video/mp4" />
       </video>
     </mat-card-content>
