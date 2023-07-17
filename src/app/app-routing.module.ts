@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NadeTileComponent } from './nade-tile/nade-tile.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { GuideViewComponent } from './guide-view/guide-view.component';
+import { DummyComponent } from './dummy/dummy.component';
 
 const routes: Routes = [
   // TODO: get the routing to work. currently, the router is displaying an extra Dashboard component with no grenades and an empty paginator
