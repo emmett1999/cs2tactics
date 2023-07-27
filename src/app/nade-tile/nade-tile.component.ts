@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, Input, OnChanges, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { NadePopupComponent } from '../nade-popup/nade-popup.component';
 import { Grenade } from '../grenade';
@@ -11,7 +11,24 @@ import { Grenade } from '../grenade';
 export class NadeTileComponent {
     @Input() grenade: Grenade;
 
+    @ViewChild('videoPlayer') videoPlayer: ElementRef;
+
+    videoLoaded = false;
+    // videoStarted = false;
+
     constructor(public dialog: MatDialog){}
+
+    ngAfterViewInit() {
+      this.videoPlayer.nativeElement.onloadeddata = (event) => {
+          console.log('Video data is loaded for ', this.grenade.title);
+          this.videoLoaded = true;
+      };
+  
+      // this.videoPlayer.nativeElement.onplaying = (event) => {
+      //   console.log('Video data is no longer paused for ', this.grenade.title);
+      //   this.videoStarted = true;
+      // };
+    }
 
     openDialog() {
       this.dialog.open(NadePopupComponent, {

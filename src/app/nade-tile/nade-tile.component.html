@@ -23,10 +23,12 @@ mat-card-footer {
 mat-card {
   border: 2px solid #000;
   background-color:lightblue;
+  width: 23vw;
 }
 
 mat-card-header {
   padding-top: 0px;
+  padding-left: 17px;
   text-align: left;
 }
 
@@ -43,6 +45,11 @@ mat-card-subtitle {
   text-align: left;
 }
 
+/* TODO: make this not a fixed size */
+mat-card-content video {
+  height: 22vh;
+}
+
 </style>
 
 <mat-card>
@@ -54,9 +61,10 @@ mat-card-subtitle {
       <mat-card-subtitle>from {{grenade.startingLocation}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-      <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" loop [muted]="'muted'">
+      <video #videoPlayer onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" loop [muted]="'muted'">
         <source src={{grenade.contentUrl}} type="video/mp4" />
       </video>
+      <!-- <img *ngIf="this.videoLoaded==false" src="../../assets/placeholder_logo.png"> -->
     </mat-card-content>
   </button>
     <!-- TODO: Figure out why surrounding the mar-card-footer in a button hides the footer -->
