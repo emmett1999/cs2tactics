@@ -6,6 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Router, NavigationStart, NavigationEnd, Event } from '@angular/router';
 import { SimpleChanges } from '@angular/core';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { SearchBarService } from '../search-bar.service';
 
 
 @Component({
@@ -17,9 +18,11 @@ export class DashboardComponent implements OnChanges {
     grenades: Grenade[] = [];
     pagedGrenades: Grenade[] = [];
 
-    @Input() selectedMap: string;
     @Input() selectedFilters: string[];
     @Input() selectedSide: string;
+    selectedMap: string;
+
+    selectedSearch: string;
     
     // paginator variables
     grenadeListLength: number = 0;
@@ -32,7 +35,7 @@ export class DashboardComponent implements OnChanges {
 
     @ViewChild('paginator', { static: true }) paginator: MatPaginator;
 
-    constructor(private grenadeService: GrenadeService, private router: Router) {
+    constructor(private grenadeService: GrenadeService, private searchBarService: SearchBarService, private router: Router) {
       this.currentRoute = "";
       console.log("Route is initially: ", router.url);
       this.router.events.subscribe((event: Event) => {
@@ -68,6 +71,10 @@ export class DashboardComponent implements OnChanges {
     ngOnInit(): void {
       console.log("ngOnInit() called");
       this.index = 0;
+      this.searchBarService.getSelectedSearch().subscribe((val) => {
+        this.selectedSearch = val;
+        this.onChanges();
+      });
       this.onChanges();
       // this.paginator.firstPage();
     }
@@ -107,9 +114,11 @@ export class DashboardComponent implements OnChanges {
       this.updateGrenadesForSide();
       // setup paginator
       this.resetPaginator();
-      console.log("Dashboard: selectedMap is ", this.selectedMap);
-      console.log("Dashboard: selectedSide is ", this.selectedSide);
-      console.log("Dashboard: selected filters is ", this.selectedFilters);
+      //finally, filter by search
+      console.log("Dashboard: selectedSearch is ", this.selectedSearch);
+      // console.log("Dashboard: selectedMap is ", this.selectedMap);
+      // console.log("Dashboard: selectedSide is ", this.selectedSide);
+      // console.log("Dashboard: selected filters is ", this.selectedFilters);
       // console.log("Paged grenades: ", this.pagedGrenades);
       // console.log("changes", changes);
     }
