@@ -112,6 +112,7 @@ export class DashboardComponent implements OnChanges {
       this.updateGrenadesForMap();
       this.updateGrenadesForFilter();
       this.updateGrenadesForSide();
+      this.updateGrenadesForSearch();
       // setup paginator
       this.resetPaginator();
       //finally, filter by search
@@ -137,6 +138,10 @@ export class DashboardComponent implements OnChanges {
       }
 
       this.pagedGrenades = this.grenades.slice(this.index, endIndex);
+    }
+
+    updateGrenadesForSearch() : void {
+      this.grenades = this.grenadeService.filterForSearch(this.grenades, this.selectedSearch);
     }
 
     updateGrenadesForSide() : void {

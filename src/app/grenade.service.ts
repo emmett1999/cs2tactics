@@ -13,6 +13,15 @@ export class GrenadeService {
     return GRENADES;
   }
 
+  filterForSearch(grenades: Grenade[], searchTerm: string): Grenade[] {
+    //basic search algo
+    const eligileGrenades = grenades.filter(item => {
+      return item.title.includes(searchTerm);
+    });
+    return eligileGrenades;
+
+  }
+
   filterForNadeType(mapName: string, nadeTypes: string[]): Grenade[] {
     var filteredGrenades: Grenade[] = [];
     if(mapName == "mirage") {
