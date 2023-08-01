@@ -10,7 +10,6 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
-
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NadeTileComponent } from './nade-tile/nade-tile.component';
@@ -22,6 +21,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { DummyComponent } from './dummy/dummy.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 
 
@@ -32,7 +32,8 @@ import { DummyComponent } from './dummy/dummy.component';
     DashboardComponent,
     GuideViewComponent,
     NadePopupComponent,
-    DummyComponent
+    DummyComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule, MatToolbarModule, MatButtonModule, AppRoutingModule,

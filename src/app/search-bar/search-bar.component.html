@@ -1,0 +1,22 @@
+<style>
+    
+    .form-field {
+        margin-bottom: -1.25em;
+        width: 250px;
+    }
+
+    /* .search-icon {
+
+    } */
+
+</style>
+
+<mat-form-field class="form-field">
+    <!-- TODO: add search icon -->
+    <!-- <mat-icon class="search-icon">search</mat-icon> -->
+    <mat-label>Search for a grenade</mat-label>
+    <input matInput (keydown.enter)="updateSearch(value)" type="text" [(ngModel)]="value">
+    <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="updateSearch('')">
+        <mat-icon>close</mat-icon>
+    </button>
+</mat-form-field>
