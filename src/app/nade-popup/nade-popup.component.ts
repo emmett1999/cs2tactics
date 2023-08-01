@@ -15,4 +15,5 @@ export class NadePopupComponent {
   onNoClick(): void {
     this.dialogRef.close();
   }
+  
 }
