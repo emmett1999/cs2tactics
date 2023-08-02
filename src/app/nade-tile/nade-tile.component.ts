@@ -13,21 +13,17 @@ export class NadeTileComponent {
 
     @ViewChild('videoPlayer') videoPlayer: ElementRef;
 
+    // TODO?: I could use this property for adding a placeholder image before the video is loaded
     videoLoaded = false;
-    // videoStarted = false;
 
     constructor(public dialog: MatDialog){}
 
+    /* This should fire after the video is loaded */
     ngAfterViewInit() {
       this.videoPlayer.nativeElement.onloadeddata = (event) => {
           console.log('Video data is loaded for ', this.grenade.title);
           this.videoLoaded = true;
       };
-  
-      // this.videoPlayer.nativeElement.onplaying = (event) => {
-      //   console.log('Video data is no longer paused for ', this.grenade.title);
-      //   this.videoStarted = true;
-      // };
     }
 
     openDialog() {
@@ -47,14 +43,5 @@ export class NadeTileComponent {
         // panelClass: 'dialog-panel'
       });
     }
-}
 
-  // export interface Grenade {
-  //   title: string;
-  //   startingLocation: string;
-  //   nadeType: string;
-  //   throwType: string;
-  //   description: string;
-  //   map: string;
-  //   contentUrl: string;
-  // }
+}

@@ -16,12 +16,13 @@ export class GrenadeService {
   filterForSearch(grenades: Grenade[], searchTerm: string): Grenade[] {
     //basic search algo
     const eligileGrenades = grenades.filter(item => {
-      return item.title.includes(searchTerm);
+      return item.title.includes(searchTerm) || item.startingLocation.includes(searchTerm);
     });
     return eligileGrenades;
 
   }
 
+  // TODO: the maps should be constants
   filterForNadeType(mapName: string, nadeTypes: string[]): Grenade[] {
     var filteredGrenades: Grenade[] = [];
     if(mapName == "mirage") {
@@ -66,8 +67,6 @@ export class GrenadeService {
       return item.map === "mirage";
     })
 
-    // console.log("Mirage grenades", nades);
-
     return nades;
   }
 
@@ -76,8 +75,6 @@ export class GrenadeService {
       return item.map === "overpass";
     })
 
-    // console.log("Overpass grenades", nades);
-
     return nades;
   }
 
@@ -85,8 +82,6 @@ export class GrenadeService {
     const nades = GRENADES.filter(item => {
       return item.map === "nuke";
     })
-
-    // console.log("Nuke grenades", nades);
 
     return nades;
   }

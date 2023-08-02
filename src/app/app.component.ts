@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
 
-export const ALL_FILTERS: {[key: string]: string[]} = {
-  "all": [],
-  "mirage": ["tomato", "potato", "sandwich"],
-  "nuke": ["apple", "pear", "banana"],
-  "overpass": ["lemon", "lime", "pome"],
-};
+// TODO: In the future, there should be different filters for each map based on location
+// export const ALL_FILTERS: {[key: string]: string[]} = {
+//   "all": [],
+//   "mirage": ["tomato", "potato", "sandwich"],
+//   "nuke": ["apple", "pear", "banana"],
+//   "overpass": ["lemon", "lime", "pome"],
+// };
+
+// TODO: Also, these map filters should probably be their own type, or an enum or something
 
 export const MAP_FILTERS = ["smoke", "flash", "molly", "he", "boost"];
 
@@ -15,17 +18,12 @@ export const MAP_FILTERS = ["smoke", "flash", "molly", "he", "boost"];
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'CS2 Tactics';
   currentMap = "all";
   currentSide = "all";
   currentGrenadesFilters = [];
-  // availableGrenadeFilters = [];
-
-  searchBarValue = "Search some stuff";
 
   ngOnInit(): void {
     this.currentGrenadesFilters.push(...MAP_FILTERS);
-    // this.availableGrenadeFilters.push(...MAP_FILTERS);
   }
  
   updateCurrentSide(sideName: string): void {
@@ -38,9 +36,7 @@ export class AppComponent {
     
   }
 
-  updateFilter(newFilter: string) : void {
-    console.log("ALL filters before", ALL_FILTERS)
-
+  updateFilters(newFilter: string): void {
     if(this.currentGrenadesFilters.includes(newFilter)){
       const index = this.currentGrenadesFilters.indexOf(newFilter);
       this.currentGrenadesFilters.splice(index, 1);

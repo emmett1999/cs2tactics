@@ -3,8 +3,8 @@
 .logo-button {
   background: transparent;
   border: none !important;
-  font-size:0;
-  cursor:pointer;
+  font-size: 0;
+  cursor: pointer;
 }
 
 .logo-image {
@@ -13,62 +13,44 @@
   padding-right: 20px;
 }
 
-.toolbar {
-  letter-spacing: 1px;
-}
-
-.toolbar-spacer {
-  flex: 1 1 auto;
-}
-
 .toolbar-button {
   height: 50px;
   font-size: 20px;
 }
-
 
 /* This is just being marked as !important for now because these buttons will later be using color='accent' with custom theme */
 .active-button {
   background-color: #FFA500 !important;
 }
 
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+
 .nade-type-label {
   padding-right: 15px;
 }
 
-.nade-side-label {
+.side-label {
   padding-left: 15px;
   padding-right: 15px;
 }
 
-.mat-button-toggle{
-    background-color: #3f51b5;
-    color: #ffffff;
-}
-
-.mat-button-toggle-checked {
-    background-color: #FFA500;
-    color: #ffffff;
-}
-
-
 </style>
 
 <!-- 
-  TODO: Fix the routing so that linking to the route will display the correct filter
+  TODO: Add paramters to the router which will load properties in the Dashboard component
   TODO: Add 'About page', add guides feature for each map
   TODO: Make the styling more consistent and actually use the angular material themes
-
-  Before release:
-  * Add description, throw type, startingLocation
-  * Fill out the list of grenades with all of my actual grenades. I will need to get the real mp4s of all my gifs.
 -->
 
-<mat-toolbar class="toolbar" color="primary">
-  <button class="logo-button" (click)="updateCurrentMap('all')" routerLink=''><img class="logo-image" src="assets/placeholder_logo.png"></button>
-    <button mat-button class="toolbar-button" (click)="updateCurrentMap('mirage')" routerLink='mirage' routerLinkActive="active-button">Mirage</button>
-    <button mat-button class="toolbar-button" (click)="updateCurrentMap('nuke')" routerLink='nuke' routerLinkActive="active-button">Nuke</button>
-    <button mat-button class="toolbar-button" (click)="updateCurrentMap('overpass')" routerLink='overpass' routerLinkActive="active-button">Overpass</button>
+<mat-toolbar color="primary">
+  <button class="logo-button" (click)="updateCurrentMap('all')" routerLink=''>
+    <img class="logo-image" src="assets/placeholder_logo.png">
+  </button>
+  <button mat-button class="toolbar-button" (click)="updateCurrentMap('mirage')" routerLink='mirage' routerLinkActive="active-button">Mirage</button>
+  <button mat-button class="toolbar-button" (click)="updateCurrentMap('nuke')" routerLink='nuke' routerLinkActive="active-button">Nuke</button>
+  <button mat-button class="toolbar-button" (click)="updateCurrentMap('overpass')" routerLink='overpass' routerLinkActive="active-button">Overpass</button>
     
   <span class="toolbar-spacer"></span>
   <!-- <button mat-button class="toolbar-button" routerLink='/guides' routerLinkActive="active-button">Guides</button> -->
@@ -77,13 +59,13 @@
 <mat-toolbar>
   <span class="nade-type-label">Nade type:</span>
   <mat-chip-listbox multiple>
-    <mat-chip-option color="primary" selected (selectionChange)="updateFilter('smoke')">Smoke</mat-chip-option>
-    <mat-chip-option color="primary" selected (selectionChange)="updateFilter('flash')">Flash</mat-chip-option>
-    <mat-chip-option color="primary" selected (selectionChange)="updateFilter('molly')">Molly</mat-chip-option>
-    <mat-chip-option color="primary" selected (selectionChange)="updateFilter('he')">HE grenade</mat-chip-option>
-    <mat-chip-option color="primary" selected (selectionChange)="updateFilter('boost')">Boost</mat-chip-option>
+    <mat-chip-option color="primary" selected (selectionChange)="updateFilters('smoke')">Smoke</mat-chip-option>
+    <mat-chip-option color="primary" selected (selectionChange)="updateFilters('flash')">Flash</mat-chip-option>
+    <mat-chip-option color="primary" selected (selectionChange)="updateFilters('molly')">Molly</mat-chip-option>
+    <mat-chip-option color="primary" selected (selectionChange)="updateFilters('he')">HE grenade</mat-chip-option>
+    <mat-chip-option color="primary" selected (selectionChange)="updateFilters('boost')">Boost</mat-chip-option>
   </mat-chip-listbox>
-  <span class="nade-side-label">Side:</span>
+  <span class="side-label">Side:</span>
   <mat-chip-listbox>
     <mat-chip-option (click)="updateCurrentSide('all')" color="primary" selected>All</mat-chip-option>
     <mat-chip-option (click)="updateCurrentSide('CT')" color="primary">CT side</mat-chip-option>
@@ -91,8 +73,9 @@
   </mat-chip-listbox>
   <span class="toolbar-spacer"></span>
   <search-bar></search-bar>
-  
 </mat-toolbar>
 
+<!-- TODO: Ideally, the app dashboard should not be declared here, the router outlet should handle it and display the dashboard
+component. But how am I supposed to bind variables from this app component to the dashboard component if the dashboard isn't declared here? -->
 <app-dashboard [selectedSide]="currentSide" [selectedFilters]="currentGrenadesFilters"></app-dashboard>
 <router-outlet></router-outlet>

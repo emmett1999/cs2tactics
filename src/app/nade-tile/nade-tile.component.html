@@ -2,34 +2,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-mat-card-footer {
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-bottom: 5px;
-}
-
-video {
-  width: 100%;
-}
-
-mat-card-footer {
-  font-family: 'Roboto', sans-serif;
-}
-
-.map-footer {
-  float: right;
-}
-
 mat-card {
   border: 2px solid #000;
   background-color:lightblue;
   width: 23vw;
-}
-
-mat-card-header {
-  padding-top: 0px;
-  padding-left: 17px;
-  text-align: left;
 }
 
 .card-button {
@@ -41,13 +17,29 @@ mat-card-header {
   margin-bottom: 0;
 }
 
+mat-card-header {
+  padding-top: 0px;
+  padding-left: 17px;
+  text-align: left;
+}
+
 mat-card-subtitle {
   text-align: left;
 }
 
-/* TODO: make this not a fixed size */
 mat-card-content video {
   height: 22vh;
+}
+
+mat-card-footer {
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 5px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.map-label {
+  float: right;
 }
 
 </style>
@@ -55,7 +47,7 @@ mat-card-content video {
 <mat-card>
   <button class="card-button" (click)="openDialog()">
     <mat-card-header>
-        <!-- TODO: make this an icon of smoke, molly etc.-->
+      <!-- TODO: make this an icon of smoke, molly etc.-->
       <!-- <div mat-card-avatar class="example-header-image"></div> -->
       <mat-card-title>{{grenade.title}}</mat-card-title>
       <mat-card-subtitle>from {{grenade.startingLocation}}</mat-card-subtitle>
@@ -64,12 +56,11 @@ mat-card-content video {
       <video #videoPlayer onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" loop [muted]="'muted'">
         <source src={{grenade.contentUrl}} type="video/mp4" />
       </video>
-      <!-- <img *ngIf="this.videoLoaded==false" src="../../assets/placeholder_logo.png"> -->
     </mat-card-content>
   </button>
-    <!-- TODO: Figure out why surrounding the mar-card-footer in a button hides the footer -->
+    <!-- TODO?: Figure out why surrounding the mat-card-footer in a button hides the footer -->
     <mat-card-footer>
         <span>{{ grenade.nadeType | uppercase}} </span>
-        <span class="map-footer">{{ grenade.map | uppercase}} - {{grenade.side}}</span>
+        <span class="map-label">{{ grenade.map | uppercase}} - {{grenade.side}}</span>
     </mat-card-footer>
 </mat-card>
