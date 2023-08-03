@@ -72,12 +72,15 @@ export class DashboardComponent implements OnChanges {
     }
 
     updateGrenadesForMap(): void {
+      console.log("Called updateGrenadesForMap(). MAP: ", this.selectedMap);
       if(this.selectedMap == "mirage") {
         this.setGrenadesMirage();
       } else if (this.selectedMap == "overpass") {
         this.setGrenadesOverpass();
       } else if (this.selectedMap == "nuke") {
-        this.setDisplayNuke();
+        this.setGrenadesNuke();
+      } else if (this.selectedMap == "inferno") {
+        this.setGrenadesInferno();
       } else if (this.selectedMap == "all") {
         this.setGrenadesAll();
       }
@@ -95,8 +98,12 @@ export class DashboardComponent implements OnChanges {
       this.grenades = this.grenadeService.getOverpass();
     }
 
-    setDisplayNuke(): void {
+    setGrenadesNuke(): void {
       this.grenades = this.grenadeService.getNuke();
+    }
+
+    setGrenadesInferno(): void {
+      this.grenades = this.grenadeService.getInferno();
     }
 
     updateGrenadesForFilter(): void {
@@ -115,7 +122,7 @@ export class DashboardComponent implements OnChanges {
       var newMap = this.getMapFromUrl(url);
       console.log('DashboardComponent: Map from url is: ', newMap);
       // TODO: this should be a static list
-      if(["all","mirage","overpass","nuke"].includes(newMap)){
+      if(["all","mirage","overpass","nuke","inferno"].includes(newMap)){
         this.selectedMap = newMap;
       } else {
         this.selectedMap = "all";

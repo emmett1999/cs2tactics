@@ -11,6 +11,7 @@ const routes: Routes = [
 { path: 'mirage', component: DummyComponent},
 { path: 'overpass', component: DummyComponent},
 { path: 'nuke', component: DummyComponent},
+{ path: 'inferno', component: DummyComponent},
 { path: '', component: DummyComponent},
 { path: 'guides', component: GuideViewComponent }
 ];

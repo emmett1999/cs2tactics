@@ -14,9 +14,10 @@ export class GrenadeService {
   }
 
   filterForSearch(grenades: Grenade[], searchTerm: string): Grenade[] {
+    var lowerCaseSearch = searchTerm.toLocaleLowerCase();
     //basic search algo
     const eligileGrenades = grenades.filter(item => {
-      return item.title.includes(searchTerm) || item.startingLocation.includes(searchTerm);
+      return item.title.toLocaleLowerCase().includes(lowerCaseSearch) || item.startingLocation.toLocaleLowerCase().includes(lowerCaseSearch);
     });
     return eligileGrenades;
 
@@ -31,6 +32,8 @@ export class GrenadeService {
       filteredGrenades = this.getOverpass();
     } else if(mapName == "nuke") {
       filteredGrenades = this.getNuke();
+    } else if(mapName == "inferno") {
+      filteredGrenades = this.getInferno();
     } else if(mapName == "all") {
       filteredGrenades = GRENADES;
     }
@@ -81,6 +84,14 @@ export class GrenadeService {
   getNuke(): Grenade[] {
     const nades = GRENADES.filter(item => {
       return item.map === "nuke";
+    })
+
+    return nades;
+  }
+
+  getInferno(): Grenade[] {
+    const nades = GRENADES.filter(item => {
+      return item.map === "inferno";
     })
 
     return nades;
