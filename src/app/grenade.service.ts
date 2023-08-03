@@ -31,6 +31,8 @@ export class GrenadeService {
       filteredGrenades = this.getOverpass();
     } else if(mapName == "nuke") {
       filteredGrenades = this.getNuke();
+    } else if(mapName == "inferno") {
+      filteredGrenades = this.getInferno();
     } else if(mapName == "all") {
       filteredGrenades = GRENADES;
     }
@@ -81,6 +83,14 @@ export class GrenadeService {
   getNuke(): Grenade[] {
     const nades = GRENADES.filter(item => {
       return item.map === "nuke";
+    })
+
+    return nades;
+  }
+
+  getInferno(): Grenade[] {
+    const nades = GRENADES.filter(item => {
+      return item.map === "inferno";
     })
 
     return nades;
