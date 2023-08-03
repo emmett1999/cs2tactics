@@ -14,9 +14,10 @@ export class GrenadeService {
   }
 
   filterForSearch(grenades: Grenade[], searchTerm: string): Grenade[] {
+    var lowerCaseSearch = searchTerm.toLocaleLowerCase();
     //basic search algo
     const eligileGrenades = grenades.filter(item => {
-      return item.title.includes(searchTerm) || item.startingLocation.includes(searchTerm);
+      return item.title.toLocaleLowerCase().includes(lowerCaseSearch) || item.startingLocation.toLocaleLowerCase().includes(lowerCaseSearch);
     });
     return eligileGrenades;
 
