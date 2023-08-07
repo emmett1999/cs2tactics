@@ -7,5 +7,6 @@ export interface Grenade {
     side: string;
     description: string;
     map: string;
+    game: string;
     contentUrl: string;
   }

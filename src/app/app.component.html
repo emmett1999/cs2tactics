@@ -72,11 +72,16 @@
     <mat-chip-option (click)="updateCurrentSide('CT')" color="primary">CT side</mat-chip-option>
     <mat-chip-option (click)="updateCurrentSide('T')" color="primary">T side</mat-chip-option>
   </mat-chip-listbox>
+  <span class="side-label">Game:</span>
+  <mat-chip-listbox>
+    <mat-chip-option (click)="updateCurrentGame('CSGO')" color="primary" selected>CS:GO</mat-chip-option>
+    <mat-chip-option (click)="updateCurrentGame('CS2')" color="primary">CS2</mat-chip-option>
+  </mat-chip-listbox>
   <span class="toolbar-spacer"></span>
   <search-bar></search-bar>
 </mat-toolbar>
 
 <!-- TODO: Ideally, the app dashboard should not be declared here, the router outlet should handle it and display the dashboard
 component. But how am I supposed to bind variables from this app component to the dashboard component if the dashboard isn't declared here? -->
-<app-dashboard [selectedSide]="currentSide" [selectedFilters]="currentGrenadesFilters"></app-dashboard>
+<app-dashboard [selectedGame]="currentGame" [selectedSide]="currentSide" [selectedFilters]="currentGrenadesFilters"></app-dashboard>
 <router-outlet></router-outlet>

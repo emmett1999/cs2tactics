@@ -20,6 +20,7 @@ export const MAP_FILTERS = ["smoke", "flash", "molly", "he", "boost"];
 export class AppComponent {
   currentMap = "all";
   currentSide = "all";
+  currentGame = "CSGO";
   currentGrenadesFilters = [];
 
   ngOnInit(): void {
@@ -33,7 +34,11 @@ export class AppComponent {
   updateCurrentMap(mapName: string): void {
     this.currentMap = mapName;
     console.log("AppComponent currentMap is", this.currentMap);
-    
+  }
+
+  updateCurrentGame(gameName: string): void {
+    this.currentGame = gameName;
+    console.log("AppComponent currentGame is", this.currentGame);
   }
 
   updateFilters(newFilter: string): void {
