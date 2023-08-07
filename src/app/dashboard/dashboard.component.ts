@@ -60,11 +60,11 @@ export class DashboardComponent implements OnChanges {
     }
 
     onChanges(): void {
-      //this.updateGrenadesForGame();
       this.updateGrenadesForMap();
       this.updateGrenadesForFilter();
       this.updateGrenadesForSide();
       this.updateGrenadesForSearch();
+      this.updateGrenadesForGame();
       this.resetPaginator();
       console.log("Dashboard: selectedSearch is ", this.selectedSearch);
       // console.log("Dashboard: selectedMap is ", this.selectedMap);

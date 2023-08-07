@@ -5,8 +5,6 @@ import { Grenade } from "./grenade";
 export const GRENADES: Grenade[] = [
 
 
-        { id: "wtfman", title: "wtf is going wrong", startingLocation: "fuck this", nadeType: "jump", throwType: "molly, smoke, flash", side: "T", description: "", map: "inferno", game: "CSGO", contentUrl: "https://streamable.com/l/gl4mkz/mp4.mp4"},
-
     // *********************************************** OVERPASS ***********************************************
 
     { id: "overpass_a_execute_combo_from_short", title: "A execute nades", startingLocation: "divider", nadeType: "smoke, molly, flash", 
@@ -484,4 +482,11 @@ export const GRENADES: Grenade[] = [
     // { id: "inferno_wallbang_a_site_awp_spot_from_apartments", title: "XXXX", startingLocation: "XXXX", nadeType: "XXXX", throwType: "XXXX", side: "XXXX", description: "", map: "inferno", game: "CSGO", contentUrl: "XXXXXX"},
     // { id: "inferno_wallbang_car_from_t_apts", title: "XXXX", startingLocation: "XXXX", nadeType: "XXXX", throwType: "XXXX", side: "XXXX", description: "", map: "inferno", game: "CSGO", contentUrl: "XXXXXX"},
 
+  // *********************************************** CS2 NADES ***********************************************
+
+    { id: "cs2overpass_molly_dice_from_mid", title: "Molly dice", startingLocation: "divider", nadeType: "molly",
+    throwType: "jump", side: "T", description: "", map: "overpass", game: "CS2", contentUrl: "https://streamable.com/l/1iolyt/mp4.mp4"},
+    { id: "cs2overpass_support_flash_monster_from_heaven", title: "Support flash monster", startingLocation: "heaven", nadeType: "flash", 
+    throwType: "run", side: "CT", description: "", map: "overpass", game: "CS2", contentUrl: "https://streamable.com/l/6e8tkv/mp4.mp4"},
+    
 ]
