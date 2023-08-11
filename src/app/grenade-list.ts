@@ -484,9 +484,10 @@ export const GRENADES: Grenade[] = [
 
   // *********************************************** CS2 NADES ***********************************************
 
-    { id: "cs2overpass_molly_dice_from_mid", title: "Molly dice", startingLocation: "divider", nadeType: "molly",
-    throwType: "jump", side: "T", description: "", map: "overpass", game: "CS2", contentUrl: "https://streamable.com/l/1iolyt/mp4.mp4"},
     { id: "cs2overpass_support_flash_monster_from_heaven", title: "Support flash monster", startingLocation: "heaven", nadeType: "flash", 
     throwType: "run", side: "CT", description: "", map: "overpass", game: "CS2", contentUrl: "https://streamable.com/l/6e8tkv/mp4.mp4"},
+    { id: "cs2overpass_support_flash_monster_from_heaven", title: "Support flash monster", startingLocation: "heaven", nadeType: "flash", 
+    throwType: "run", side: "CT", description: "", map: "ancient", game: "CS2", contentUrl: "https://streamable.com/l/6e8tkv/mp4.mp4"},
+    
     
 ]

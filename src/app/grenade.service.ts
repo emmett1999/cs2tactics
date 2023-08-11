@@ -34,6 +34,8 @@ export class GrenadeService {
       filteredGrenades = this.getNuke();
     } else if(mapName == "inferno") {
       filteredGrenades = this.getInferno();
+    } else if (mapName == "ancient") {
+      filteredGrenades = this.getAncient();
     } else if(mapName == "all") {
       filteredGrenades = GRENADES;
     }
@@ -100,6 +102,14 @@ export class GrenadeService {
   getInferno(): Grenade[] {
     const nades = GRENADES.filter(item => {
       return item.map === "inferno";
+    })
+
+    return nades;
+  }
+
+  getAncient(): Grenade[] {
+    const nades = GRENADES.filter(item => {
+      return item.map === "ancient";
     })
 
     return nades;
