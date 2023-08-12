@@ -5,6 +5,7 @@ import { Grenade } from "./grenade";
 export const GRENADES: Grenade[] = [
 
 
+
     // *********************************************** OVERPASS ***********************************************
 
     { id: "overpass_a_execute_combo_from_short", title: "A execute nades", startingLocation: "divider", nadeType: "smoke, molly, flash", 
@@ -344,7 +345,7 @@ export const GRENADES: Grenade[] = [
     { id: "mirage_popflash_stairs", title: "Popflash stairs", startingLocation: "stairs", nadeType: "flash",
     throwType: "run", side: "CT", description: "", map: "mirage", game: "CSGO", contentUrl: "https://streamable.com/l/bda1n8/mp4.mp4"},
     { id: "mirage_molly_jungle_from_palace", title: "Molly jungle", startingLocation: "palace", nadeType: "molly",
-    throwType: "quick run ", side: "T", description: "", map: "mirage", game: "CSGO", contentUrl: "https://streamable.com/l/6h26ly/mp4.mp4"},
+    throwType: "quick run", side: "T", description: "", map: "mirage", game: "CSGO", contentUrl: "https://streamable.com/l/6h26ly/mp4.mp4"},
     { id: "mirage_molly_ramp_from_jungle", title: "Molly ramp", startingLocation: "jungle", nadeType: "molly",
     throwType: "normal", side: "CT", description: "", map: "mirage", game: "CSGO", contentUrl: "https://streamable.com/l/m99o99/mp4.mp4"},
     { id: "mirage_molly_jungle", title: "Molly jungle", startingLocation: "jungle", nadeType: "molly",
@@ -484,10 +485,38 @@ export const GRENADES: Grenade[] = [
 
   // *********************************************** CS2 NADES ***********************************************
 
-    { id: "cs2overpass_support_flash_monster_from_heaven", title: "Support flash monster", startingLocation: "heaven", nadeType: "flash", 
-    throwType: "run", side: "CT", description: "", map: "overpass", game: "CS2", contentUrl: "https://streamable.com/l/6e8tkv/mp4.mp4"},
-    { id: "cs2overpass_support_flash_monster_from_heaven", title: "Support flash monster", startingLocation: "heaven", nadeType: "flash", 
-    throwType: "run", side: "CT", description: "", map: "ancient", game: "CS2", contentUrl: "https://streamable.com/l/6e8tkv/mp4.mp4"},
-    
-    
-]
+    // { id: "cs2overpass_support_flash_monster_from_heaven", title: "Support flash monster", startingLocation: "heaven", nadeType: "flash", 
+    // throwType: "run", side: "CT", description: "", map: "overpass", game: "CS2", contentUrl: "https://streamable.com/l/6e8tkv/mp4.mp4"},
+
+    // { id: "cs2overpass_b_site_god_flash", title: "XXXXXXX", startingLocation: "XXXXXX", nadeType: "XXXXX", throwType: "XXXXXX", side: "T", description: "", map: "overpass", game: "CS2", contentUrl: "XXXXXX"},
+    { id: "cs2overpass_b_site_god_flash", title: "God flash for B site", startingLocation: "water", nadeType: "flash", throwType: "normal", side: "T", description: "", map: "overpass", game: "CS2", contentUrl: "https://streamable.com/l/nmwb3m/mp4.mp4"},
+    { id: "cs2overpass_flash_pillar_from_canals", title: "Flash pillar", startingLocation: "canals", nadeType: "flash", throwType: "run", side: "T", description: "", map: "overpass", game: "CS2", contentUrl: "https://streamable.com/l/xjvcda/mp4.mp4"},
+    { id: "cs2overpass_god_flash_a_site", title: "God flash for A site", startingLocation: "divider", nadeType: "flash", throwType: "jump", side: "T", description: "", map: "overpass", game: "CS2", contentUrl: "https://streamable.com/l/yujl98/mp4.mp4"},
+    { id: "cs2overpass_molly_dice_from_divider", title: "Molly dice", startingLocation: "divider", nadeType: "molly", throwType: "jump", side: "T", description: "", map: "overpass", game: "CS2", contentUrl: "https://streamable.com/l/6aztmm/mp4.mp4"},
+    { id: "cs2overpass_molly_divider_from_fountain", title: "Molly divider", startingLocation: "fountain", nadeType: "molly", throwType: "walk", side: "T", description: "", map: "overpass", game: "CS2", contentUrl: "https://streamable.com/l/ix5lm4/mp4.mp4"},
+    { id: "cs2overpass_molly_party_from_playground", title: "Molly party", startingLocation: "divider", nadeType: "molly", throwType: "walk+jump", side: "T", description: "", map: "overpass", game: "CS2", contentUrl: "https://streamable.com/l/qy7rb7/mp4.mp4"},
+    { id: "cs2overpass_molly_pipe", title: "Molly pipe", startingLocation: "jungle", nadeType: "molly", throwType: "normal", side: "T", description: "", map: "overpass", game: "CS2", contentUrl: "https://streamable.com/l/jnuktk/mp4.mp4"},
+    { id: "cs2overpass_molly_short_from_t_spawn", title: "Molly short", startingLocation: "T spawn", nadeType: "molly", throwType: "medium, run+jump", side: "T", description: "", map: "overpass", game: "CS2", contentUrl: "https://streamable.com/l/hzrvrh/mp4.mp4"},
+    { id: "cs2overpass_molly_short_from_t_spawn_easy", title: "Molly short", startingLocation: "T spawn", nadeType: "molly", throwType: "jump", side: "T", description: "", map: "overpass", game: "CS2", contentUrl: "https://streamable.com/l/uojpqe/mp4.mp4"},
+    { id: "cs2overpass_molly_toxic_from_canals", title: "Molly toxic", startingLocation: "canals", nadeType: "molly", throwType: "run+jump", side: "T", description: "", map: "overpass", game: "CS2", contentUrl: "https://streamable.com/l/uafgf6/mp4.mp4"},
+    { id: "cs2overpass_b_site_god_flash", title: "XXXXXXX", startingLocation: "XXXXXX", nadeType: "XXXXX", throwType: "XXXXXX", side: "T", description: "", map: "overpass", game: "CS2", contentUrl: "XXXXXX"},
+    { id: "cs2overpass_b_site_god_flash", title: "XXXXXXX", startingLocation: "XXXXXX", nadeType: "XXXXX", throwType: "XXXXXX", side: "T", description: "", map: "overpass", game: "CS2", contentUrl: "XXXXXX"},
+    { id: "cs2overpass_b_site_god_flash", title: "XXXXXXX", startingLocation: "XXXXXX", nadeType: "XXXXX", throwType: "XXXXXX", side: "T", description: "", map: "overpass", game: "CS2", contentUrl: "XXXXXX"},
+    { id: "cs2overpass_b_site_god_flash", title: "XXXXXXX", startingLocation: "XXXXXX", nadeType: "XXXXX", throwType: "XXXXXX", side: "T", description: "", map: "overpass", game: "CS2", contentUrl: "XXXXXX"},
+    { id: "cs2overpass_b_site_god_flash", title: "XXXXXXX", startingLocation: "XXXXXX", nadeType: "XXXXX", throwType: "XXXXXX", side: "T", description: "", map: "overpass", game: "CS2", contentUrl: "XXXXXX"},
+    { id: "cs2overpass_b_site_god_flash", title: "XXXXXXX", startingLocation: "XXXXXX", nadeType: "XXXXX", throwType: "XXXXXX", side: "T", description: "", map: "overpass", game: "CS2", contentUrl: "XXXXXX"},
+    { id: "cs2overpass_b_site_god_flash", title: "XXXXXXX", startingLocation: "XXXXXX", nadeType: "XXXXX", throwType: "XXXXXX", side: "T", description: "", map: "overpass", game: "CS2", contentUrl: "XXXXXX"},
+    { id: "cs2overpass_b_site_god_flash", title: "XXXXXXX", startingLocation: "XXXXXX", nadeType: "XXXXX", throwType: "XXXXXX", side: "T", description: "", map: "overpass", game: "CS2", contentUrl: "XXXXXX"},
+    { id: "cs2overpass_b_site_god_flash", title: "XXXXXXX", startingLocation: "XXXXXX", nadeType: "XXXXX", throwType: "XXXXXX", side: "T", description: "", map: "overpass", game: "CS2", contentUrl: "XXXXXX"},
+    { id: "cs2overpass_b_site_god_flash", title: "XXXXXXX", startingLocation: "XXXXXX", nadeType: "XXXXX", throwType: "XXXXXX", side: "T", description: "", map: "overpass", game: "CS2", contentUrl: "XXXXXX"},
+    { id: "cs2overpass_b_site_god_flash", title: "XXXXXXX", startingLocation: "XXXXXX", nadeType: "XXXXX", throwType: "XXXXXX", side: "T", description: "", map: "overpass", game: "CS2", contentUrl: "XXXXXX"},
+    { id: "cs2overpass_b_site_god_flash", title: "XXXXXXX", startingLocation: "XXXXXX", nadeType: "XXXXX", throwType: "XXXXXX", side: "T", description: "", map: "overpass", game: "CS2", contentUrl: "XXXXXX"},
+    { id: "cs2overpass_b_site_god_flash", title: "XXXXXXX", startingLocation: "XXXXXX", nadeType: "XXXXX", throwType: "XXXXXX", side: "T", description: "", map: "overpass", game: "CS2", contentUrl: "XXXXXX"},
+    { id: "cs2overpass_b_site_god_flash", title: "XXXXXXX", startingLocation: "XXXXXX", nadeType: "XXXXX", throwType: "XXXXXX", side: "T", description: "", map: "overpass", game: "CS2", contentUrl: "XXXXXX"},
+    { id: "cs2overpass_b_site_god_flash", title: "XXXXXXX", startingLocation: "XXXXXX", nadeType: "XXXXX", throwType: "XXXXXX", side: "T", description: "", map: "overpass", game: "CS2", contentUrl: "XXXXXX"},
+    { id: "cs2overpass_b_site_god_flash", title: "XXXXXXX", startingLocation: "XXXXXX", nadeType: "XXXXX", throwType: "XXXXXX", side: "T", description: "", map: "overpass", game: "CS2", contentUrl: "XXXXXX"},
+    { id: "cs2overpass_b_site_god_flash", title: "XXXXXXX", startingLocation: "XXXXXX", nadeType: "XXXXX", throwType: "XXXXXX", side: "T", description: "", map: "overpass", game: "CS2", contentUrl: "XXXXXX"},
+    { id: "cs2overpass_b_site_god_flash", title: "XXXXXXX", startingLocation: "XXXXXX", nadeType: "XXXXX", throwType: "XXXXXX", side: "T", description: "", map: "overpass", game: "CS2", contentUrl: "XXXXXX"},
+    { id: "cs2overpass_b_site_god_flash", title: "XXXXXXX", startingLocation: "XXXXXX", nadeType: "XXXXX", throwType: "XXXXXX", side: "T", description: "", map: "overpass", game: "CS2", contentUrl: "XXXXXX"},
+
+  ]   
