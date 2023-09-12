@@ -631,10 +631,10 @@ export const GRENADES: Grenade[] = [
   // ********************************************** CS2 ANCIENT **********************************************
 
   { id: "cs2ancient_smoke_temple_from_t_spawn", title: "Smoke temple", startingLocation: "T spawn", nadeType: "smoke", throwType: "jump", side: "T", description: "", map: "ancient", game: "CS2", contentUrl: "https://streamable.com/l/bwe3x1/mp4.mp4"},
-  { id: "cs2ancient_flash_a_site_behind_wall", title: "Flash A site", startingLocation: "A main", nadeType: "flash", throwType: "run", side: "T", description: "", map: "ancient", game: "CS2", contentUrl: "https://streamable.com/l/ici5el/mp4.mp4"},
+  { id: "cs2ancient_flash_a_site_entry", title: "Entry flash A site", startingLocation: "A main", nadeType: "flash", throwType: "run", side: "T", description: "", map: "ancient", game: "CS2", contentUrl: "https://streamable.com/l/zylm1g/mp4.mp4"},
   { id: "cs2ancient_flash_b_ramp_t", title: "Flash B ramp", startingLocation: "ruins", nadeType: "flash", throwType: "normal", side: "T", description: "", map: "ancient", game: "CS2", contentUrl: "https://streamable.com/l/l4zxej/mp4.mp4"},
   { id: "cs2ancient_smoke_ct_from_a_main", title: "Smoke CT", startingLocation: "A main", nadeType: "smoke", throwType: "normal", side: "T", description: "", map: "ancient", game: "CS2", contentUrl: "https://streamable.com/l/w3q8kl/mp4.mp4"},
-  { id: "cs2ancient_smoke_ct_from_donut", title: "Smoke CT", startingLocation: "donut", nadeType: "smoke", throwType: "normal", side: "T", description: "", map: "ancient", game: "CS2", contentUrl: "https://streamable.com/l/t6ublg/mp4.mp4"},
+  { id: "cs2ancient_smoke_ct_from_donut", title: "Smoke CT", startingLocation: "donut", nadeType: "smoke", throwType: "normal", side: "T", description: "", map: "ancient", game: "CS2", contentUrl: "https://streamable.com/l/mxy1zy/mp4.mp4"},
   { id: "cs2ancient_smoke_donut_from_t_stairs", title: "Smoke donut", startingLocation: "T stairs", nadeType: "smoke", throwType: "normal", side: "T", description: "", map: "ancient", game: "CS2", contentUrl: "https://streamable.com/l/n90rza/mp4.mp4"},
   { id: "cs2ancient_smoke_triple_from_spawn", title: "Smoke triple", startingLocation: "T spawn", nadeType: "smoke", throwType: "jump", side: "T", description: "", map: "ancient", game: "CS2", contentUrl: "https://streamable.com/l/f3kv2k/mp4.mp4"},
   { id: "cs2ancient_support_flash_b_ramp_ct", title: "Support flash B ramp", startingLocation: "short", nadeType: "flash", throwType: "jump", side: "T", description: "", map: "ancient", game: "CS2", contentUrl: "https://streamable.com/l/iz0mks/mp4.mp4"},
@@ -645,6 +645,10 @@ export const GRENADES: Grenade[] = [
   { id: "cs2ancient_smoke_house_from_lower_mid", title: "Smoke house", startingLocation: "lower mid", nadeType: "smoke", throwType: "jump", side: "T", description: "", map: "ancient", game: "CS2", contentUrl: "https://streamable.com/l/d87q2f/mp4.mp4"},
   { id: "cs2ancient_smoke_house_from_t_spawn_alternate", title: "Smoke house (alternate)", startingLocation: "T spawn", nadeType: "smoke", throwType: "jump", side: "T", description: "", map: "ancient", game: "CS2", contentUrl: "https://streamable.com/l/uw8oy8/mp4.mp4"},
   { id: "cs2ancient_smoke_temple_from_a_main", title: "Smoke temple", startingLocation: "A main", nadeType: "smoke", throwType: "normal", side: "T", description: "", map: "ancient", game: "CS2", contentUrl: "https://streamable.com/l/5smc98/mp4.mp4"},
+
+
+
+
 
   // ********************************************** CS2 Nuke **********************************************
   { id: "cs2nuke_both_smoke_wall_smokes", title: "Standard smoke wall smokes", startingLocation: "T spawn", nadeType: "smoke", throwType: "jump", side: "T", description: "", map: "nuke", game: "CS2", contentUrl: "https://streamable.com/l/a7t9fs/mp4.mp4"},

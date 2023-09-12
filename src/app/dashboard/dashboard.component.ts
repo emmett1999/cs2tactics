@@ -65,6 +65,7 @@ export class DashboardComponent implements OnChanges {
       this.updateGrenadesForSide();
       this.updateGrenadesForSearch();
       this.updateGrenadesForGame();
+      this.defaultSort();
       this.resetPaginator();
       console.log("Dashboard: selectedSearch is ", this.selectedSearch);
       // console.log("Dashboard: selectedMap is ", this.selectedMap);
@@ -126,6 +127,11 @@ export class DashboardComponent implements OnChanges {
       console.log("Called updateGrenadesForGame(). GAME: ", this.selectedGame);
       this.grenades = this.grenadeService.filterForGame(this.grenades, this.selectedGame);
       console.log("selectedGrenades: ", this.grenades.length)
+    }
+
+    defaultSort(): void {
+      this.grenades = this.grenadeService.defaultSort(this.grenades);
+      console.log("Called Grenade service defaultSort()");
     }
 
     updateGrenadesForSearch(): void {

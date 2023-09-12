@@ -13,6 +13,20 @@ export class GrenadeService {
     return GRENADES;
   }
 
+  defaultSort(grenades: Grenade[]): Grenade[] {
+    var someGrenades = grenades.sort(function(a, b) {
+      if (a.startingLocation < b.startingLocation) {
+        return -1;
+      }
+      if (a.startingLocation > b.startingLocation) {
+        return 1;
+      }
+      return 0;
+    })
+
+    return someGrenades;
+  }
+
   filterForSearch(grenades: Grenade[], searchTerm: string): Grenade[] {
     var lowerCaseSearch = searchTerm.toLocaleLowerCase();
     //basic search algo
