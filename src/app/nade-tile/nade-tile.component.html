@@ -61,7 +61,7 @@ mat-card-footer {
   </button>
     <!-- TODO?: Figure out why surrounding the mat-card-footer in a button hides the footer -->
     <mat-card-footer>
-        <span>{{ grenade.nadeType | uppercase}} </span>
+        <span>{{ grenade.nadeType | uppercase}} - {{ grenade.throwType | uppercase }} THROW</span>
         <span class="map-label">{{ grenade.map | uppercase}} - {{grenade.side}}</span>
     </mat-card-footer>
 </mat-card>
