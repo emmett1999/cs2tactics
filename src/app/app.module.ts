@@ -22,6 +22,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { DummyComponent } from './dummy/dummy.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -37,7 +38,7 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
   imports: [
     BrowserModule, MatToolbarModule, MatButtonModule, AppRoutingModule,
     MatCardModule, MatGridListModule, MatDialogModule, MatChipsModule,
-    MatPaginatorModule, BrowserAnimationsModule, MatButtonToggleModule, MatInputModule, MatIconModule, FormsModule
+    MatPaginatorModule, BrowserAnimationsModule, MatButtonToggleModule, MatInputModule, MatIconModule, FormsModule, MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent],
