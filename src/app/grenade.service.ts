@@ -72,14 +72,6 @@ export class GrenadeService {
     return eligileGrenades;
   }
 
-  filterForGame(grenades: Grenade[], game: string) : Grenade[] {
-    const eligileGrenades = grenades.filter(item => {
-      return item.game === game;
-    })
-
-    return eligileGrenades;
-  }
-
   stringContainsOneListItem(target: string, filters: string[]) : boolean{
     for (var i = 0; i < filters.length; i++) {
       if(target.includes(filters[i])) {
