@@ -23,6 +23,7 @@ import { FormsModule } from '@angular/forms';
 import { DummyComponent } from './dummy/dummy.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import {MatSelectModule} from '@angular/material/select';
+import { AreaSelectComponent } from './area-select/area-select.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import {MatSelectModule} from '@angular/material/select';
     GuideViewComponent,
     NadePopupComponent,
     DummyComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    AreaSelectComponent
   ],
   imports: [
     BrowserModule, MatToolbarModule, MatButtonModule, AppRoutingModule,

@@ -64,6 +64,7 @@ export class DashboardComponent implements OnChanges {
       this.updateGrenadesForFilter();
       this.updateGrenadesForSide();
       this.updateGrenadesForSearch();
+      this.grenadeService.setActiveGrenades(this.grenades);
       //this.updateGrenadesForGame();
       this.defaultSort();
       this.resetPaginator();

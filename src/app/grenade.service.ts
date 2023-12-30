@@ -1,13 +1,27 @@
 import { Injectable } from '@angular/core';
 import { GRENADES } from './grenade-list';
 import { Grenade } from './grenade';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GrenadeService {
 
-  constructor() { }
+  activeGrenades: BehaviorSubject<Grenade[]>;
+
+  constructor() {
+    this.activeGrenades = new BehaviorSubject<Grenade[]>(null);
+  }
+
+  getActiveGrenades(): Observable<Grenade[]> {
+    return this.activeGrenades.asObservable();
+  }
+
+  setActiveGrenades(grenades: Grenade[]): void {
+    this.activeGrenades.next(grenades);
+    console.log("GrenadeService: activeGrenades updated to ", this.activeGrenades);
+  }
 
   getAllGrenades(): Grenade[] {
     return GRENADES;
