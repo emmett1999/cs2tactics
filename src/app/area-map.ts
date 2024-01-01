@@ -18,6 +18,8 @@ export const Areas = {
     B_SHORT: "B Short",
     B_LONG: "B Long",
     CT_SPAWN: "CT Spawn",
+    RUINS: "Ruins",
+    ALLEY: "Alley",
   },
   NUKE: {
     A_SITE: "A Site",
@@ -35,6 +37,10 @@ export const Areas = {
     DARK: "Dark",
     B_SITE: "B Site",
     BACK_HALLS: "Back Halls",
+    T_SPAWN: "T Spawn",
+    CT_SPAWN: "CT Spawn",
+    LOBBY: "Lobby",
+    HEAVEN: "Heaven",
   },
   MIRAGE: {
     A_SITE: "A Site",
@@ -67,6 +73,8 @@ export const Areas = {
     BANANA: "Banana",
     T_RAMP: "T Ramp",
     T_SPAWN: "T Spawn",
+    MID: "Mid",
+    CT_SPAWN: "CT Spawn",
   },
   OVERPASS: {
     A_SITE: "A Site",
