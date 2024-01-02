@@ -1,0 +1,27 @@
+<style>
+
+.form-field {
+    margin-left: 1em;
+    margin-bottom: -1.25em;
+    width: 15em;
+}
+
+mat-label {
+    user-select: none;
+}
+
+</style>
+
+<!-- TODO: add option groups for each distinct map for the grenades-->
+<mat-form-field class="form-field">
+    <mat-label>Select an area</mat-label>
+    <mat-select [(ngModel)]="selectedArea" (selectionChange)="onSelectionChange()">
+        <mat-option [value]="noneArea.area">-- None --</mat-option>
+        <ng-container *ngIf="numDistinctAreas == 1">
+            <mat-option *ngFor="let area of areas" [value]="area.area">{{ area.area }}</mat-option>
+        </ng-container>
+        <ng-container *ngIf="numDistinctAreas > 1">
+            <mat-option *ngFor="let area of areas" [value]="area.area">{{ area.map | titlecase}} - {{ area.area }}</mat-option>
+        </ng-container>
+    </mat-select>
+</mat-form-field>

@@ -5,6 +5,7 @@ import { Router, NavigationStart, NavigationEnd, Event } from '@angular/router';
 import { SimpleChanges } from '@angular/core';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { SearchBarService } from '../search-bar.service';
+import { Area } from '../area';
 
 // TODO: The selectedMaps should really be enums or some constant
 // TODO: Many of the calls to onChanges() can probably be removed. When a class variable changes, onChanges() should get called (right?)
@@ -22,6 +23,7 @@ export class DashboardComponent implements OnChanges {
     @Input() selectedSide: string;
     private selectedMap: string;
     private selectedSearch: string; // search bar variable
+    private selectedArea: Area; // area variable
     
     /* paginator variables */
     @ViewChild('paginator', { static: true }) paginator: MatPaginator;
@@ -46,6 +48,12 @@ export class DashboardComponent implements OnChanges {
         this.selectedSearch = val;
         this.onChanges();
       });
+
+      /* When the selectedArea changes, call onChanges() with new selected area */
+      this.grenadeService.getSelectedArea().subscribe((val) => {
+        this.selectedArea = val;
+        this.onChanges();
+      });
     }
 
     ngOnInit(): void {
@@ -64,6 +72,8 @@ export class DashboardComponent implements OnChanges {
       this.updateGrenadesForFilter();
       this.updateGrenadesForSide();
       this.updateGrenadesForSearch();
+      this.grenadeService.setActiveGrenades(this.grenades);
+      this.updateGrenadesForArea();
       //this.updateGrenadesForGame();
       this.defaultSort();
       this.resetPaginator();
@@ -121,6 +131,10 @@ export class DashboardComponent implements OnChanges {
 
     updateGrenadesForSide(): void {
       this.grenades = this.grenadeService.filterForSide(this.grenades, this.selectedSide);
+    }
+
+    updateGrenadesForArea(): void {
+      this.grenades = this.grenadeService.filterForArea(this.grenades, this.selectedArea);
     }
 
     // updateGrenadesForGame(): void {

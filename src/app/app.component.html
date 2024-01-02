@@ -73,12 +73,7 @@
     <mat-chip-option (click)="updateCurrentSide('CT')" color="primary">CT side</mat-chip-option>
     <mat-chip-option (click)="updateCurrentSide('T')" color="primary">T side</mat-chip-option>
   </mat-chip-listbox>
-  <!-- <mat-form-field>
-    <mat-label>Favorite food</mat-label>
-    <mat-select>
-      <mat-option></mat-option>
-    </mat-select>
-  </mat-form-field> -->
+  <area-select [selectedMap]="currentMap"></area-select>
   <span class="toolbar-spacer"></span>
   <search-bar></search-bar>
 </mat-toolbar>
