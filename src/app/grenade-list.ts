@@ -2,6 +2,7 @@ import { Grenade } from "./grenade";
 import { Areas } from "./area-map";
 
 // TODO: All the id's in here are being used. Every filename without an ID should be deleted.
+// TODO: The Area object should probably have another attribute - startingLocation. This can pull from the Areas file
 
 export const GRENADES: Grenade[] = [
 

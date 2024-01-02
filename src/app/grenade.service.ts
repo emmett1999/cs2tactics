@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { GRENADES } from './grenade-list';
 import { Grenade } from './grenade';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { Area } from './area';
 
 @Injectable({
   providedIn: 'root'
@@ -9,9 +10,13 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class GrenadeService {
 
   activeGrenades: BehaviorSubject<Grenade[]>;
+  selectedArea: BehaviorSubject<Area>;
+
+  public noneArea: Area = {area: "None", map: "None"};
 
   constructor() {
     this.activeGrenades = new BehaviorSubject<Grenade[]>(null);
+    this.selectedArea = new BehaviorSubject<Area>(this.noneArea);
   }
 
   getActiveGrenades(): Observable<Grenade[]> {
@@ -21,6 +26,17 @@ export class GrenadeService {
   setActiveGrenades(grenades: Grenade[]): void {
     this.activeGrenades.next(grenades);
     console.log("GrenadeService: activeGrenades updated to ", this.activeGrenades);
+  }
+
+  getSelectedArea(): Observable<Area> {
+      console.log("GET SELECTED AREA VALUE: ", this.selectedArea);
+      return this.selectedArea.asObservable();
+  }
+
+  setSelectedArea(area: Area): void{
+    console.log("GrenadeService: THE VALUE GETTING PASSED TO ME IS ", area);
+    this.selectedArea.next(area);
+  
   }
 
   getAllGrenades(): Grenade[] {
@@ -49,6 +65,10 @@ export class GrenadeService {
     });
     return eligileGrenades;
 
+  }
+
+  resetSelectedSearch(): void {
+    
   }
 
   // TODO: the maps should be constants
@@ -84,6 +104,22 @@ export class GrenadeService {
     })
 
     return eligileGrenades;
+  }
+
+  filterForArea(grenades: Grenade[], area: Area) : Grenade[] {
+    console.log("GrenadeService area passed into filterForArea(): ", area);
+    console.log("GrenadeService grenades passed into filterForArea(): ", grenades);
+    //console.log("GrenadeService area.area passed into filterForArea(): ", area.area);
+    if(area.area === "None") {
+      console.log("WHY IS THIS SHIT NOT GETTING CALLED?")
+      return grenades;
+    } else {
+      const eligileGrenades = grenades.filter(item => {
+        return item.area == area.area; // && item.map == area.map
+      })
+      console.log("GrenadeService grenades after filterForArea()", eligileGrenades);
+      return eligileGrenades;
+    }
   }
 
   stringContainsOneListItem(target: string, filters: string[]) : boolean{
