@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+mat-card {
+  border: 2px solid #000;
+  background-color:lightblue;
+  width: 23vw;
+}
+
+.card-button {
+  background: transparent;
+  border: none !important;
+  font-size:0;
+  cursor:pointer;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+mat-card-header {
+  padding-top: 0px;
+  padding-left: 17px;
+  text-align: left;
+}
+
+mat-card-subtitle {
+  text-align: left;
+}
+
+mat-card-content video {
+  height: 22vh;
+}
+
+mat-card-footer {
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 5px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.map-label {
+  float: right;
+}
+
