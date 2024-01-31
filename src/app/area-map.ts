@@ -18,6 +18,7 @@ export const Areas = {
     B_SHORT: "B Short",
     B_LONG: "B Long",
     CT_SPAWN: "CT Spawn",
+    LANE: "Lane",
     RUINS: "Ruins",
     ALLEY: "Alley",
   },

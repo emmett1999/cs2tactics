@@ -4,6 +4,8 @@ import { Areas } from "./area-map";
 // TODO: All the id's in here are being used. Every filename without an ID should be deleted.
 // TODO: The Area object should probably have another attribute - startingLocation. This can pull from the Areas file
 
+//TODO: maybe rename some Mirage grenades
+
 export const GRENADES: Grenade[] = [
 
   // ********************************************** CS2 OVERPASS **********************************************
@@ -224,6 +226,16 @@ export const GRENADES: Grenade[] = [
   {id: "cs2ancient_support_flash_a_from_mid", title: "Flash A", startingLocation: "mid", nadeType: "flash", throwType: "normal", side: "CT", description: "", map: "ancient", area: Areas.ANCIENT.MID, contentUrl: "https://streamable.com/l/g0hp7e/mp4.mp4"},
   {id: "cs2ancient_support_flash_b_from_ct_spawn", title: "Flash B", startingLocation: "CT spawn", nadeType: "flash", throwType: "run+jump", side: "CT", description: "", map: "ancient", area: Areas.ANCIENT.CT_SPAWN, contentUrl: "https://streamable.com/l/sqlvht/mp4.mp4"},
   {id: "cs2ancient_smoke_ct_from_outside_a_main_alt", title: "Smoke CT (alt)", startingLocation: "outside A main", nadeType: "smoke", throwType: "jump", side: "T", description: "", map: "ancient", area: Areas.ANCIENT.A_MAIN, contentUrl: "https://streamable.com/l/f9mt7l/mp4.mp4"},
+  //TODO: fill descriptions
+  {id: "cs2ancient_aggressive_mid_utility", title: "Aggressive mid utility", startingLocation: "top mid", nadeType: "smoke,molly,he,flash", throwType: "run,jump", side: "CT", description: "", map: "ancient", area: Areas.ANCIENT.MID, contentUrl: "https://streamable.com/l/wbt4zy/mp4.mp4"},
+  {id: "cs2ancient_anti_rush_b_ramp_utility", title: "Anti-rush B ramp utility", startingLocation: "CT", nadeType: "smoke,molly,he,flash", throwType: "run,run+jump", side: "CT", description: "", map: "ancient", area: Areas.ANCIENT.B_SITE, contentUrl: "https://streamable.com/l/qnm1y9/mp4.mp4"},
+  {id: "cs2ancient_anti_rush_cave_utility", title: "Anti-rush cave utility", startingLocation: "B site", nadeType: "molly,he", throwType: "run", side: "CT", description: "", map: "ancient", area: Areas.ANCIENT.B_SITE, contentUrl: "https://streamable.com/l/4q4dsb/mp4.mp4"},
+  {id: "cs2ancient_molly_a_main", title: "Molly A main", startingLocation: "A site", nadeType: "molly", throwType: "run", side: "CT", description: "", map: "ancient", area: Areas.ANCIENT.A_SITE, contentUrl: "https://streamable.com/l/37doc1/mp4.mp4"},
+  {id: "cs2ancient_molly_lane", title: "Molly lane", startingLocation: "B site", nadeType: "molly", throwType: "run", side: "CT", description: "", map: "ancient", area: Areas.ANCIENT.B_SITE, contentUrl: "https://streamable.com/l/ppnyzx/mp4.mp4"},
+  {id: "cs2ancient_popflash_lane_from_catwalk", title: "Popflash lane", startingLocation: "catwalk", nadeType: "flash", throwType: "normal", side: "CT", description: "", map: "ancient", area: Areas.ANCIENT.CATWALK, contentUrl: "https://streamable.com/l/japiot/mp4.mp4"},
+  {id: "cs2ancient_popflash_lane_from_cave", title: "Popflash lane", startingLocation: "cave", nadeType: "flash", throwType: "normal", side: "CT", description: "", map: "ancient", area: Areas.ANCIENT.CAVE, contentUrl: "https://streamable.com/l/f72nrl/mp4.mp4"},
+  {id: "cs2ancient_popflash_mid_from_cubby", title: "Popflash mid", startingLocation: "cubby", nadeType: "flash", throwType: "normal", side: "CT", description: "", map: "ancient", area: Areas.ANCIENT.MID, contentUrl: "https://streamable.com/l/7c9267/mp4.mp4"},
+  {id: "cs2ancient_smoke_elbow_from_house", title: "Smoke elbow", startingLocation: "house", nadeType: "smoke", throwType: "run", side: "CT", description: "", map: "ancient", area: Areas.ANCIENT.HOUSE, contentUrl: "https://streamable.com/l/f9o5v5/mp4.mp4"},
 
 
   // ********************************************** CS2 Nuke **********************************************
