@@ -49,7 +49,9 @@ export const GRENADES: Grenade[] = [
   { id: "cs2overpass_support_flash_monster_from_pit", title: "Flash monster", startingLocation: "pit", nadeType: "flash", throwType: "medium", side: "CT", description: "", map: "overpass", area: Areas.OVERPASS.B_SITE, contentUrl: "https://streamable.com/l/v2mtl6/mp4.mp4"},
   { id: "cs2overpass_support_flash_monster_from_site", title: "Support flash monster", startingLocation: "B site", nadeType: "flash", throwType: "normal", side: "CT", description: "", map: "overpass", area: Areas.OVERPASS.B_SITE, contentUrl: "https://streamable.com/l/gg1p48/mp4.mp4"},
   { id: "cs2overpass_support_flash_ramp_for_party_from_divider", title: "Flash ramp for party", startingLocation: "divider", nadeType: "flash", throwType: "jump", side: "CT", description: "", map: "overpass", area: Areas.OVERPASS.BATHROOMS, contentUrl: "https://streamable.com/l/c8317e/mp4.mp4"},
-
+  { id: "cs2overpass_smoke_pipe_for_molly", title: "Lurk pipe smoke", startingLocation: "T spawn", nadeType: "smoke", throwType: "jump", side: "T", description: "", map: "overpass", area: Areas.OVERPASS.T_SPAWN, contentUrl: "https://streamable.com/l/69du15/mp4.mp4"},
+  { id: "cs2overpass_molly_short", title: "Molly short", startingLocation: "T spawn", nadeType: "molly", throwType: "run+medium jump", side: "T", description: "", map: "overpass", area: Areas.OVERPASS.T_SPAWN, contentUrl: "https://streamable.com/l/vjaj2i/mp4.mp4"},
+  
   // ********************************************** CS2 MIRAGE **********************************************
 
   { id: "cs2mirage_standard_window_smoke", title: "Standard window smoke", startingLocation: "T spawn", nadeType: "smoke", throwType: "hold D+jump", side: "T", description: "", map: "mirage", area: Areas.MIRAGE.T_SPAWN, contentUrl: "https://streamable.com/l/hzrh1i/mp4.mp4"},
@@ -161,7 +163,10 @@ export const GRENADES: Grenade[] = [
   { id: "cs2inferno_top_porch_oneway_smoke", title: "Top porch one-way smoke", startingLocation: "top porch", nadeType: "smoke", throwType: "right click", side: "CT", description: "", map: "inferno", area: Areas.INFERNO.A_SHORT, contentUrl: "https://streamable.com/l/fu4im4/mp4.mp4"},
   { id: "cs2inferno_smoke_bottom_banana_from_ct_spawn", title: "Smoke bottom banana", startingLocation: "CT spawn", nadeType: "smoke", throwType: "jump", side: "CT", description: "", map: "inferno", area: Areas.INFERNO.CT_SPAWN, contentUrl: "https://streamable.com/l/zn8kya/mp4.mp4"},  
   { id: "cs2inferno_smoke_coffin_from_banana", title: "Smoke coffin", startingLocation: "banana", nadeType: "smoke", throwType: "forward+jump", side: "T", description: "", map: "inferno", area: Areas.INFERNO.BANANA, contentUrl: "https://streamable.com/l/w0kmdx/mp4.mp4"},  
-
+  { id: "cs2inferno_flash_halfwall_from_bottom_banana", title: "Flash halfwall", startingLocation: "banana", nadeType: "flash", throwType: "crouch", side: "T", description: "", map: "inferno", area: Areas.INFERNO.BANANA, contentUrl: "https://streamable.com/l/9uxnyn/mp4.mp4"},  
+  { id: "cs2inferno_smoke_boost_and_flash_b_site", title: "Smoke boost and flash B site", startingLocation: "banana", nadeType: "smoke,flash", throwType: "normal,jump", side: "T", description: "", map: "inferno", area: Areas.INFERNO.BANANA, contentUrl: "https://streamable.com/l/k0k6ya/mp4.mp4"},  
+  { id: "cs2inferno_smoke_for_mid_to_b_from_mid", title: "Smoke domino", startingLocation: "mid", nadeType: "smoke", throwType: "jump", side: "T", description: "", map: "inferno", area: Areas.INFERNO.MID, contentUrl: "https://streamable.com/l/7awkeb/mp4.mp4"},  
+  { id: "cs2inferno_smoke_for_mid_to_b_from_mid", title: "Flash 2nd mid", startingLocation: "A site", nadeType: "flash", throwType: "run+jump", side: "CT", description: "", map: "inferno", area: Areas.INFERNO.A_SITE, contentUrl: "https://streamable.com/l/xyyjdt/mp4.mp4"},  
 
   // ********************************************** CS2 ANCIENT **********************************************
 
@@ -236,6 +241,7 @@ export const GRENADES: Grenade[] = [
   {id: "cs2ancient_popflash_lane_from_cave", title: "Popflash lane", startingLocation: "cave", nadeType: "flash", throwType: "normal", side: "CT", description: "", map: "ancient", area: Areas.ANCIENT.CAVE, contentUrl: "https://streamable.com/l/f72nrl/mp4.mp4"},
   {id: "cs2ancient_popflash_mid_from_cubby", title: "Popflash mid", startingLocation: "cubby", nadeType: "flash", throwType: "normal", side: "CT", description: "", map: "ancient", area: Areas.ANCIENT.MID, contentUrl: "https://streamable.com/l/7c9267/mp4.mp4"},
   {id: "cs2ancient_smoke_elbow_from_house", title: "Smoke elbow", startingLocation: "house", nadeType: "smoke", throwType: "run", side: "CT", description: "", map: "ancient", area: Areas.ANCIENT.HOUSE, contentUrl: "https://streamable.com/l/f9o5v5/mp4.mp4"},
+  {id: "cs2ancient_retake_cave_smoke", title: "Retake cave smoke", startingLocation: "B site", nadeType: "smoke", throwType: "run+jump", side: "CT", description: "", map: "ancient", area: Areas.ANCIENT.B_SITE, contentUrl: "https://streamable.com/l/ey85uq/mp4.mp4"},
 
 
   // ********************************************** CS2 Nuke **********************************************
