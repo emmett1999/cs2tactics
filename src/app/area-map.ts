@@ -93,5 +93,21 @@ export const Areas = {
     T_SPAWN: "T Spawn",
     CT_SPAWN: "CT Spawn",
     HEAVEN: "Heaven",
+  },
+  VERTIGO: {
+    A_SITE: "A Site",
+    A_RAMP: "A Ramp",
+    SANDBAG: "Sandbag",
+    HEADSHOT: "Headshot",
+    HEAVEN: "Heaven",
+    ELEVATOR: "Elevator",
+    MID: "Mid",
+    T_MID: "T Mid",
+    B_SITE: "B Site",
+    B_MAIN: "B Main",
+    B_STAIRS: "B Stairs",
+    WHITE_BOX: "White box",
+    CT_SPAWN: "CT Spawn",
+    T_SPAWN: "T Spawn",
   }
 }

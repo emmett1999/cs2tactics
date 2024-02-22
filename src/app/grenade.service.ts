@@ -84,6 +84,8 @@ export class GrenadeService {
       filteredGrenades = this.getInferno();
     } else if (mapName == "ancient") {
       filteredGrenades = this.getAncient();
+    } else if (mapName == "vertigo") {
+      filteredGrenades = this.getVertigo();
     } else if(mapName == "all") {
       filteredGrenades = GRENADES;
     }
@@ -166,6 +168,14 @@ export class GrenadeService {
   getAncient(): Grenade[] {
     const nades = GRENADES.filter(item => {
       return item.map === "ancient";
+    })
+
+    return nades;
+  }
+
+  getVertigo(): Grenade[] {
+    const nades = GRENADES.filter(item => {
+      return item.map === "vertigo";
     })
 
     return nades;
