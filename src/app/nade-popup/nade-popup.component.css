@@ -1,0 +1,24 @@
+/* TODO: This component should really be using the theme's font */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+video {
+    width: 90%;
+}
+
+.dialog-container {
+    font-family: 'Roboto';
+    background-color:lightblue;
+    height: 100%; /* Not sure this is needed */
+    text-align: center;
+}
+
+.description-container {
+    height: 80px; /* This will probably need to be adjusted in the future */
+}
+
+div > .description-container {
+    text-align: left;
+    padding-left: 6%;
+    padding-right: 6%;
+}

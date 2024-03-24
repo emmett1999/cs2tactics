@@ -1,0 +1,9 @@
+.form-field {
+    margin-left: 1em;
+    margin-bottom: -1.25em;
+    width: 15em;
+}
+
+mat-label {
+    user-select: none;
+}
